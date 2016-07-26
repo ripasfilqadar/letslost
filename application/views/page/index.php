@@ -22,10 +22,11 @@
 		</div>
         <div class="col-xs-6">
 			<center>
-				<img src="./img/Google-Play-Store.png" width="190px" height="60px"><br><br>
-				<img src="./img/Apple-App-Store.png" width="190px" height="60px">
+				<img src="<?php echo base_url()?>assets/img/Google-Play-Store.png" width="190px" height="60px"><br><br>
+				<img src="<?php echo base_url()?>assets/img/Apple-App-Store.png" width="190px" height="60px">
 			</center>
 		</div>
       </div>
 	  
 	  <hr>
+

@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Candra Reza Prasetya Gannes" >
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>LetsLost</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/letslost1.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="./js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+			<img src="./img/logotype B.png" width="160px" height="22px">
+		  </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <!--ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul-->
+          <ul class="nav navbar-nav navbar-right">
+            <form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Places, Cities, Anywhere">
+						</div>
+						<button class="btn btn-primary" type="button"><i class="glyphicon glyphicon-search"></i></button>
+					</form>
+					<li class="divider-vertical"></li>
+					<li><button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#profile"><img src="./img/Levels/jendral.png" height="25" width="20"> @letslost</button>
+					</li>
+					<li class="divider-vertical"></li>
+					<li><button type="button" class="btn btn-primary navbar-btn"><img src="./img/home/notification.png"></button>
+					</li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+	<!-- Modal -->
+	<div class="modal fade" id="profile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		<font color="white">	
+		  <div class="modal-header">		
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><img src="./img/cls.png"></span><span class="sr-only">Close</span></button>
+			<div class="col-md-5">
+				<center>				
+				<img class="featurette-image img-responsive" src="./img/Levels/jendral.png" height="100" width="90">
+				</center>			
+			</div>
+			<div class="col-md-7">	
+				<h2 class="modal-title" id="myModalLabel">@letslost</h2>
+				<h4 class="modal-title" id="myModalLabel"><i>General</i></h4>
+				<p>Treveling, Owner</p><br />
+			</div>
+		  </div>
+		  <div class="modal-body">
+			<img src="./img/Medals/psg.png" title="PartySeeker" height="75" width="75"> &nbsp; <img src="./img/Medals/fhg.png" title="FoodHunter" height="75" width="75"> &nbsp; <img src="./img/Medals/pg.png" title="SnapShoots" height="75" width="75"> &nbsp; <img src="./img/Medals/tg.png" title="Wonderer" height="75" width="75"> &nbsp; <img src="./img/Medals/shg.png" title="ShopHolic" height="75" width="75"> &nbsp; <img src="./img/Medals/slg.png" title="SleepyHead" height="75" width="75">
+			
+			<hr>
+			<p>PartySeeker</p>
+			<div class="progress">
+       			 <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
+    		  	</div>
+			<p>FoodHunter</p>
+			<div class="progress">
+       			 <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
+    		  	</div>
+			<p>SnapShoots</p>
+			<div class="progress">
+       			 <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
+    		  	</div>
+			<p>Wonderer</p>
+			<div class="progress">
+       			 <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
+    		  	</div>
+			<p>ShopHolic</p>
+			<div class="progress">
+       			 <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
+    		  	</div>
+			<p>SleepyHead</p>
+			<div class="progress">
+       			 <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
+    		  	</div>
+		  </div>
+		</font>
+		</div>
+	  </div>
+	</div>
+	
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Example headline.</h1>
+              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Another example headline.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAFVVVQAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>One more for good measure.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->	
+	
+	<div class="container">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <h2>Heading</h2>
+          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+		  <div class="panel panel-default">
+			<div class="panel-heading" role="tab" id="headingOne">
+			  <h4 class="panel-title">
+				<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#hotels" aria-expanded="false" aria-controls="collapseOne">
+				  <img src="./img/home/hotel.png">
+				</a>
+			  </h4>
+			</div>
+			<div id="hotels" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+			  <div class="panel-body">
+				<div class="row">
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/home/hotel/hotel1.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">
+									<div class="btn-group">
+									  <button type="button" class="btn btn-primary">Book</button>
+									  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									  </ul>
+									</div>
+								</h4>
+                                <h4><a href="#">Hotel Majapahit</a>
+                                </h4>
+                                <h4><center>IDR 1,340,000/night</h4>
+								<p>Historic Colonial-style Hotel situated in the heart of city's commercial & shopping distric, 1km from Gubeng station.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+									| 5.0
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/home/hotel/hotel2.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">
+									<div class="btn-group">
+									  <button type="button" class="btn btn-primary">Book</button>
+									  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									  </ul>
+									</div>
+								</h4>
+                                <h4><a href="#">JW Mariott Hotel</a>
+                                </h4>
+                                <h4><center>IDR 947,288/night</center></h4>
+								<p>Located in central business district of city center - Walk to largest shopping mall Tunjungan Plaza.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+									| 4.1
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/home/hotel/hotel3.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">
+									<div class="btn-group">
+									  <button type="button" class="btn btn-primary">Book</button>
+									  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									  </ul>
+									</div>
+								</h4>
+                                <h4><a href="#">Inna Simpang</a>
+                                </h4>
+                                <h4><center>IDR 529,473/night</center></h4>
+								<p>Seven-story Hotel located near goverment offoces</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+									| 5.0
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="panel panel-default">
+			<div class="panel-heading" role="tab" id="headingTwo">
+			  <h4 class="panel-title">
+				<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#culinary" aria-expanded="false" aria-controls="collapseTwo">
+				  <img src="./img/home/culinary.png">
+				</a>
+			  </h4>
+			</div>
+			<div id="culinary" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+			  <div class="panel-body">
+				<div class="row">
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/home/hotel/hotel1.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">
+									<div class="btn-group">
+									  <button type="button" class="btn btn-primary">Book</button>
+									  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									  </ul>
+									</div>
+								</h4>
+                                <h4><a href="#">Hotel Majapahit</a>
+                                </h4>
+                                <h4><center>IDR 1,340,000/night</h4>
+								<p>Historic Colonial-style Hotel situated in the heart of city's commercial & shopping distric, 1km from Gubeng station.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+									| 5.0
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/home/hotel/hotel2.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">
+									<div class="btn-group">
+									  <button type="button" class="btn btn-primary">Book</button>
+									  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									  </ul>
+									</div>
+								</h4>
+                                <h4><a href="#">JW Mariott Hotel</a>
+                                </h4>
+                                <h4><center>IDR 947,288/night</center></h4>
+								<p>Located in central business district of city center - Walk to largest shopping mall Tunjungan Plaza.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+									| 4.1
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/home/hotel/hotel3.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">
+									<div class="btn-group">
+									  <button type="button" class="btn btn-primary">Book</button>
+									  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									  </ul>
+									</div>
+								</h4>
+                                <h4><a href="#">Inna Simpang</a>
+                                </h4>
+                                <h4><center>IDR 529,473/night</center></h4>
+								<p>Seven-story Hotel located near goverment offoces</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+									| 5.0
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="panel panel-default">
+			<div class="panel-heading" role="tab" id="headingThree">
+			  <h4 class="panel-title">
+				<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#attraction" aria-expanded="false" aria-controls="collapseThree">
+				  <img src="./img/home/attraction.png">
+				</a>
+			  </h4>
+			</div>
+			<div id="attraction" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+			  <div class="panel-body">
+				<div class="row">
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/home/hotel/hotel1.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">
+									<div class="btn-group">
+									  <button type="button" class="btn btn-primary">Book</button>
+									  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									  </ul>
+									</div>
+								</h4>
+                                <h4><a href="#">Hotel Majapahit</a>
+                                </h4>
+                                <h4><center>IDR 1,340,000/night</h4>
+								<p>Historic Colonial-style Hotel situated in the heart of city's commercial & shopping distric, 1km from Gubeng station.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+									| 5.0
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/home/hotel/hotel2.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">
+									<div class="btn-group">
+									  <button type="button" class="btn btn-primary">Book</button>
+									  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									  </ul>
+									</div>
+								</h4>
+                                <h4><a href="#">JW Mariott Hotel</a>
+                                </h4>
+                                <h4><center>IDR 947,288/night</center></h4>
+								<p>Located in central business district of city center - Walk to largest shopping mall Tunjungan Plaza.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+									| 4.1
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/home/hotel/hotel3.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">
+									<div class="btn-group">
+									  <button type="button" class="btn btn-primary">Book</button>
+									  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									  </ul>
+									</div>
+								</h4>
+                                <h4><a href="#">Inna Simpang</a>
+                                </h4>
+                                <h4><center>IDR 529,473/night</center></h4>
+								<p>Seven-story Hotel located near goverment offoces</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+									| 5.0
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="panel panel-default">
+			<div class="panel-heading" role="tab" id="headingFour">
+			  <h4 class="panel-title">
+				<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#shopping" aria-expanded="false" aria-controls="collapseThree">
+				  <img src="./img/home/shopping.png">
+				</a>
+			  </h4>
+			</div>
+			<div id="shopping" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+			  <div class="panel-body">
+				<div class="row">
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/home/hotel/hotel1.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">
+									<div class="btn-group">
+									  <button type="button" class="btn btn-primary">Book</button>
+									  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									  </ul>
+									</div>
+								</h4>
+                                <h4><a href="#">Hotel Majapahit</a>
+                                </h4>
+                                <h4><center>IDR 1,340,000/night</h4>
+								<p>Historic Colonial-style Hotel situated in the heart of city's commercial & shopping distric, 1km from Gubeng station.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+									| 5.0
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/home/hotel/hotel2.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">
+									<div class="btn-group">
+									  <button type="button" class="btn btn-primary">Book</button>
+									  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									  </ul>
+									</div>
+								</h4>
+                                <h4><a href="#">JW Mariott Hotel</a>
+                                </h4>
+                                <h4><center>IDR 947,288/night</center></h4>
+								<p>Located in central business district of city center - Walk to largest shopping mall Tunjungan Plaza.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+									| 4.1
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/home/hotel/hotel3.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">
+									<div class="btn-group">
+									  <button type="button" class="btn btn-primary">Book</button>
+									  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									  </ul>
+									</div>
+								</h4>
+                                <h4><a href="#">Inna Simpang</a>
+                                </h4>
+                                <h4><center>IDR 529,473/night</center></h4>
+								<p>Seven-story Hotel located near goverment offoces</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+									| 5.0
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="panel panel-default">
+			<div class="panel-heading" role="tab" id="headingFive">
+			  <h4 class="panel-title">
+				<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#nl" aria-expanded="false" aria-controls="collapseThree">
+				  <img src="./img/home/nightlife.png">
+				</a>
+			  </h4>
+			</div>
+			<div id="nl" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+			  <div class="panel-body">
+				<div class="row">
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/home/hotel/hotel1.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">
+									<div class="btn-group">
+									  <button type="button" class="btn btn-primary">Book</button>
+									  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									  </ul>
+									</div>
+								</h4>
+                                <h4><a href="#">Hotel Majapahit</a>
+                                </h4>
+                                <h4><center>IDR 1,340,000/night</h4>
+								<p>Historic Colonial-style Hotel situated in the heart of city's commercial & shopping distric, 1km from Gubeng station.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+									| 5.0
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/home/hotel/hotel2.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">
+									<div class="btn-group">
+									  <button type="button" class="btn btn-primary">Book</button>
+									  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									  </ul>
+									</div>
+								</h4>
+                                <h4><a href="#">JW Mariott Hotel</a>
+                                </h4>
+                                <h4><center>IDR 947,288/night</center></h4>
+								<p>Located in central business district of city center - Walk to largest shopping mall Tunjungan Plaza.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+									| 4.1
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/home/hotel/hotel3.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">
+									<div class="btn-group">
+									  <button type="button" class="btn btn-primary">Book</button>
+									  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									  </ul>
+									</div>
+								</h4>
+                                <h4><a href="#">Inna Simpang</a>
+                                </h4>
+                                <h4><center>IDR 529,473/night</center></h4>
+								<p>Seven-story Hotel located near goverment offoces</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+									| 5.0
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="panel panel-default">
+			<div class="panel-heading" role="tab" id="headingSix">
+			  <h4 class="panel-title">
+				<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#public" aria-expanded="false" aria-controls="collapseSix">
+				  <img src="./img/home/public.png">
+				</a>
+			  </h4>
+			</div>
+			<div id="public" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+			  <div class="panel-body">
+				<div class="row">
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/home/hotel/hotel1.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">
+									<div class="btn-group">
+									  <button type="button" class="btn btn-primary">Book</button>
+									  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									  </ul>
+									</div>
+								</h4>
+                                <h4><a href="#">Hotel Majapahit</a>
+                                </h4>
+                                <h4><center>IDR 1,340,000/night</h4>
+								<p>Historic Colonial-style Hotel situated in the heart of city's commercial & shopping distric, 1km from Gubeng station.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+									| 5.0
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/home/hotel/hotel2.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">
+									<div class="btn-group">
+									  <button type="button" class="btn btn-primary">Book</button>
+									  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									  </ul>
+									</div>
+								</h4>
+                                <h4><a href="#">JW Mariott Hotel</a>
+                                </h4>
+                                <h4><center>IDR 947,288/night</center></h4>
+								<p>Located in central business district of city center - Walk to largest shopping mall Tunjungan Plaza.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+									| 4.1
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="./img/home/hotel/hotel3.png" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">
+									<div class="btn-group">
+									  <button type="button" class="btn btn-primary">Book</button>
+									  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<span class="caret"></span>
+										<span class="sr-only">Toggle Dropdown</span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									  </ul>
+									</div>
+								</h4>
+                                <h4><a href="#">Inna Simpang</a>
+                                </h4>
+                                <h4><center>IDR 529,473/night</center></h4>
+								<p>Seven-story Hotel located near goverment offoces</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+									| 5.0
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/docs.min.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

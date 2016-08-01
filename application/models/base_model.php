@@ -7,8 +7,8 @@ class Base_model extends CI_Model {
 	    parent::__construct();          
 	}
 	function input($data) {		
-		
-	    $this->db->insert('user',$data);
+		// $data['timesubmit']=date('d-m-Y H:i:s');
+	    $this->db->insert($this->table,$data);
 	}
 
 	function get() {
@@ -16,17 +16,19 @@ class Base_model extends CI_Model {
 	    return $query->result_array();
 	}
 	function getBy($data){
+		
 		$query=$this->db->get_where($this->table,$data);
 		return $query->result_array();
 	}
 
 	function update($id,$data) {
+		$data['update']=date('d-m-Y H:i:s');
 		$this->db->where('id',$id);
 	    $this->db->update($this->table,$data);
 	}
 
-	function delete($id) {
-	    $this->db->where('id',$id);
+	function delete($data) {
+	    $this->db->where($data);
 	    $this->db->delete($this->table);
 	}
 }

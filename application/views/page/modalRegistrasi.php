@@ -1,4 +1,3 @@
-
 <div class="modal fade" tabindex="-1" role="dialog" id="modalRegistrasi">
   <div class="modal-dialog" role="document">
     <form action="<?php echo base_url()?>login/signup" method="POST" class="form-horizontal">
@@ -35,6 +34,35 @@
               <input type="email" class="form-control" placeholder="E-Mail" name="email">             
             </div>
           </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label" >Website</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Website" name="website">             
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label" >Bio</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Bio" name="bio">             
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label" >Born</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control datepicker" placeholder="Born" name="born">             
+            </div>
+          </div>          
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label" >Gender</label>
+            <div class="col-sm-10">
+              <input type="radio"  name="gender"> L
+              <input type="radio"  name="gender"> P          
+            </div>
+          </div>          
 
           <div class="form-group">
             <label class="col-sm-2 control-label" >Password</label>

@@ -6,7 +6,7 @@ class Login extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->library('Layout');
-		$this->load->model('user');
+		$this->load->model('member');
 	}
 
 	public function index()
@@ -18,10 +18,11 @@ class Login extends CI_Controller {
 	{
 		$input=$this->input->post();
 		$input['pass']=md5($input['pass']);
-		$user=$this->user->getBy($input);
-		print_r($input);
+		$user=$this->member->getBy($input);
 		if(sizeof($user)>0){
 			$_SESSION['user']=$user[0];
+			$update['lastlog']=date('Y-m-d H:i:s');
+			$this->member->update($user[0]['user_id'],$update);
 		}
 		else{
 			$this->session->set_flashdata('warning','username dan password tidak ada yang cocok');
@@ -29,10 +30,18 @@ class Login extends CI_Controller {
 		redirect('/');	
 	}
 	public function signup(){
+		$update=['email'=>$this->input->post('email')];
+		var_dump($update);
+		$user=$this->member->getBy($update);
+		var_dump($user);
+		if (sizeof($user)>0) {
+			$_SESSION['warning']='Email sudah digunakan';
+			redirect('/');
+		}
 		$password=$this->input->post('pass');
 		$confirm_pass=$this->input->post('confirm_pass');
 		if ($password!=$confirm_pass) {
-			$this->session->set_flashdata('warning','Password yang anda masukkan tidak sama');
+			$_SESSION['warning']='Password yang anda masukkan tidak sama';
 		}
 		else{
 			$data = array(
@@ -42,8 +51,12 @@ class Login extends CI_Controller {
 				'phone'=>$this->input->post('phone'),
 				'email'=>$this->input->post('email'),
 				);
-			$this->user->input($data);			
+			$this->member->input($data);			
 		}
 			redirect('/');
+	}
+	function logout(){
+		unset($_SESSION['user']);
+		redirect('login');
 	}
 }

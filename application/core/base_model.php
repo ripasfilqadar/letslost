@@ -6,8 +6,9 @@ class Base_model extends CI_Model {
 	{   
 	    parent::__construct();          
 	}
-	function insert($data) {
-	    $this->db->insert($this->table,$data);
+	function input($data) {
+		echo $this->table;
+	   // $this->db->insert($this->table,$data);
 	}
 
 	function get() {

@@ -3,10 +3,13 @@
     <div class="page-header">
         <br/><br/><br/><br/><br/>
 		<center>
-			<form>
+			<form action="<?php echo base_url()?>page/search">
 				<div class="input-group" style="width:100%;text-align:center;margin:0 auto;">
-					<input class="form-control input-lg" title="Places, Cities, Regions, Countries, anyware." placeholder="Places, Cities, Regions, Countries, anyware." type="text">
-					<span class="input-group-btn"><button class="btn btn-lg btn-primary" type="button"><i class="glyphicon glyphicon-search"></i></button></span>
+					<input class="form-control input-lg" title="Places, Cities, Regions, Countries, anyware." placeholder="Places, Cities, Regions, Countries, anyware." type="text" name="search">
+					<span class="input-group-btn"><button class="btn btn-lg btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i></button></span>
+				</div>
+				<div >
+					<a href="#modalAddTrip " data-toggle="modal"    data-backdrop="static"  data-keyboard="false" ><u><h4 style="text-align:right; color:white">Or post a trip</h4></u></a>					
 				</div>
 			</form>
 		</center>
@@ -30,3 +33,5 @@
 	  
 	  <hr>
 
+
+<?php include 'modalRegistrasi.php';

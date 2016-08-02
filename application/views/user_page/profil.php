@@ -55,7 +55,7 @@
 					<div class="col-md-6"><?php echo 'Start from '.$mytrip['start']?></div>					
 				</div>
 				<div>
-					<button data-id=<?php echo $mytrip['trip_id'];?>>View</button>
+					<a href="<?php echo base_url()?>userpage/detailtrip/<?php echo $mytrip['trip_id']?>"> <button data-id=<?php echo $mytrip['trip_id'];?>>View</button></a>
 				</div>
 				
 			</div>
@@ -131,3 +131,4 @@
     </div>
   </div>
 </div>
+

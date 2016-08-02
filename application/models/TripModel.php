@@ -23,9 +23,9 @@ class TripModel extends Base_model {
 	function getBy($data){
 		$this->db->select("city_name(start_city) AS start, city_name(destinate) as finish, trip.*");
 		$query=$this->db->get_where('trip',$data);
-
 		return $query->result_array();
 	}
+	
 
 }
 ?>

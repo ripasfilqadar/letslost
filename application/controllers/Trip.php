@@ -73,4 +73,15 @@ class Trip extends CI_Controller {
 		$msg=['code'=>200, 'msg'=>'Anda batal mengikuti trip'];
 		echo json_encode($msg);
 	}
+	function update(){
+		$input=$this->input->post();
+		$this->tripModel->update($input['trip_id'],$input);
+		redirect('userpage/detailtrip/'.$input['trip_id']);
+	}
+	function delete(){
+		$input=$this->input->post();
+		$this->tripModel->delete($input);
+		$_SESSION['warning']='Trip Berhasil dihapus';
+		redirect('userpage/profil');
+	}
 }

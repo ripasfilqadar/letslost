@@ -22,8 +22,8 @@ class Base_model extends CI_Model {
 	}
 
 	function update($id,$data) {
-		$data['update']=date('d-m-Y H:i:s');
-		$this->db->where('id',$id);
+		$data['updated']=date('d-m-Y H:i:s');
+		$this->db->where($id);
 	    $this->db->update($this->table,$data);
 	}
 

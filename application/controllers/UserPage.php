@@ -34,4 +34,12 @@ class UserPage extends CI_Controller {
 		$this->member->update($input['user_id'],$input);
 		 redirect('userpage/profil');
 	}
+	function detailTrip($id=NULL){
+		if ($id==NULL) {
+			redirect('userpage/profil');
+		}
+		$data['trip']=$this->tripModel->getBy(['trip_id'=>$id])[0];
+		$data['partisipant']=$this->partisipant->getBy(['trip_id'=>$id]);
+		$this->layout->render('user_page/detail-trip',$data,$this->header);
+	}
 }

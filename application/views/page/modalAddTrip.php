@@ -26,7 +26,7 @@
           </div>
           <div class="form-group">
             <div>
-              <a  class="col-sm-12" href="#warning" data-toggle="modal" style="text-align:right">or sign up</a>
+              <a  class="col-sm-12" href="#modalRegistrasi" data-toggle="modal" style="text-align:right" data-dismiss="modal">or sign up</a>
             </div>
           </div>
           
@@ -114,3 +114,4 @@
     </div>
   </div>
 </div>
+<?php load_view('page/modalRegistrasi.php'); ?>

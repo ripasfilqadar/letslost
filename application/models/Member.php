@@ -21,6 +21,11 @@ class Member extends Base_model {
 		$result=$this->db->query($query);
 		return $result->result_array();
 	}
+	function getByHash($id){
+		$query="SELECT * FROM member WHERE md5(user_id)='".$id."'";
+		$result=$this->db->query($query);
+		return $result->result_array();
+	}
 
 }
 ?>

@@ -9,6 +9,7 @@ class Base_model extends CI_Model {
 	function input($data) {		
 		// $data['timesubmit']=date('d-m-Y H:i:s');
 	    $this->db->insert($this->table,$data);
+	    return  $this->db->insert_id();
 	}
 
 	function get() {

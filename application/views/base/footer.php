@@ -13,6 +13,7 @@
     
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="<?php echo base_url()?>assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
 <div class="modal fade" tabindex="-1" role="dialog" id="warning">
   <div class="modal-dialog" role="document">

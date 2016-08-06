@@ -15,7 +15,16 @@ class Page extends CI_Controller {
 	}
 	function search(){
 		$input=$this->input->get();
+		if (isset($input['type'])&& $input['type']=='API') {
+			unset($input['type']);
+			$type='API';
+		}
 		$data['trip']=$this->tripmodel->search($input);
+		if (isset($type)) {
+			$msg=['code'=>'200','msg'=>'Data Pencarian','data'=>$data['trip']];
+			echo json_encode($msg);
+			die();	
+		}
 		$this->layout->render('page/search',$data);
 	}
 }

@@ -15,11 +15,11 @@
         </div>
         <div class="navbar-header" style="width:50%">
            <ul class="nav navbar-nav navbar-right" style="width:100%">
-            <form class="navbar-form navbar-left" role="search" style="width:60%">
+            <form class="navbar-form navbar-left" role="search" style="width:60%" action="<?php echo base_url()?>page/search" method="GET">
             <div class="form-group" style="width:80%">
-              <input type="text" class="form-control" placeholder="Places, Cities, Anywhere" style="width:100%">
+              <input type="text" class="form-control" placeholder="Places, Cities, Anywhere" style="width:100%" name="search">
             </div>
-            <button class="btn btn-primary" type="button"><i class="glyphicon glyphicon-search"></i></button>
+            <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i></button>
           </form>
           <a href="#modalAddTrip " data-toggle="modal"    data-backdrop="static"  data-keyboard="false" ><u><h4>Or post a trip</h4></u></a>
         </div>

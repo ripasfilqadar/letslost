@@ -63,16 +63,30 @@ $.fn.modal.Constructor.prototype.enforceFocus = function () {};
     });
   });
 </script>
-    
+    <script type="text/javascript">
+    var user=undefined;
+    </script>
+    <?php
+
+    if (isset($_SESSION['user'])){?>
+    <script type="text/javascript">
+      var user='<?php echo json_encode($_SESSION["user"])?>';
+    </script>
+    <?php } ?>
+
 <script type="text/javascript">
   function join(){
       var trip_id=$("[name='trip_id']").val();
-      var user='<?php echo json_encode($_SESSION["user"])?>';
-      user=jQuery.parseJSON(user);
-      console.log(user);
-      $.each(user, function(key, value) {
-          $("#dataMember [name='"+key+"']").val(value);
-      });
+      if (user!=undefined) {
+        user=jQuery.parseJSON(user);
+        $.each(user, function(key, value) {
+            $("#dataMember [name='"+key+"']").val(value);
+            // $("#dataMember [name='"+key+"']").prop('disabled',false).clone().appendTo("#dataMember form");
+            // $("#dataMember [name='"+key+"']").prop('disabled',true);
+        });
+      };
+      console.log($("#dataMember form"));
+      
       $("#dataMember [name='trip_id']").val(trip_id);
       var name=$("#detailTrip .namaTrip").text();
       $("#dataMember form h4").text('Join To '+name);

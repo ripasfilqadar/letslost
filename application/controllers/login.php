@@ -19,53 +19,82 @@ class Login extends CI_Controller {
 	public function checkLogin()
 	{
 		$input=$this->input->post();
+
 		$input['pass']=md5($input['pass']);
-		$user=$this->member->getBy($input)[0];
+
+		$user=$this->member->getBy([ 'email'=> $input['email'],'pass'=> $input['pass']])[0];
+		
 		if(sizeof($user)>0){
 			if ($user['flags']==0) {
+				if (isset($input['type']) && $input['type']=='API') {
+					$msg=['code'=>'500','msg'=>'Akun anda belum diaktivasi,silah kan cek email ','data'=>''];
+					echo json_encode($msg)	;
+					die();
+				}
 				$_SESSION['warning']='Akun anda belum diaktivasi, silahkan cek email';
 				redirect('/');
 			}
-			$_SESSION['user']=$user;
 			$update['lastlog']=date('Y-m-d H:i:s');
 			$this->member->update($user['user_id'],$update);
+			if (isset($input['type']) && $input['type']=='API') {
+				$msg=['code'=>'200','msg'=>'Login Berhasil ','data'=>$user];
+				echo json_encode($msg)	;
+				die();
+			}
+			$_SESSION['user']=$user;
 		}
 		else{
+			if (isset($input['type']) && $input['type']=='API') {
+				$msg=['code'=>'500','msg'=>'username dan password tidak ada yang coco','data'=>''];
+				echo json_encode($msg)	;
+				die();
+			}
 			$this->session->set_flashdata('warning','username dan password tidak ada yang cocok');
 		}
 		redirect('/');	
 	}
 	public function signup(){
-		$secret='6LcBsyYTAAAAAMBYJeoS5P72Ge36lhY50ueDW6Lm';
 
-		$result=file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$this->input->post("g-recaptcha-response"));
-		$result=json_decode($result,true);
-		if ($result['success']==false) {
-			$_SESSION['warning']='Captcha tidak valid';
-			redirect('/');
+		$secret='6LcBsyYTAAAAAMBYJeoS5P72Ge36lhY50ueDW6Lm';
+		$input=$this->input->post();
+		if (!isset($input['type'])) {
+			$result=file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$this->input->post("g-recaptcha-response"));
+			$result=json_decode($result,true);
+			if ($result['success']==false) {
+				$_SESSION['warning']='Captcha tidak valid';
+				redirect('/');
+			}			
 		}
 
 		$update=['email'=>$this->input->post('email')];
 		$user=$this->member->getBy($update);
 		if (sizeof($user)>0) {
+			if (isset($input['type']) && $input['type']=='API') {
+				$msg=['code'=>'500','msg'=>'Email sudag digunakan','data'=>''];
+				echo json_encode($msg);
+				die();
+			}
 			$_SESSION['warning']='Email sudah digunakan';
 
 		}
 		$password=$this->input->post('pass');
 		$confirm_pass=$this->input->post('confirm_pass');
 		if ($password!=$confirm_pass) {
+			if (isset($input['type']) && $input['type']!='API') {
+				$msg=['code'=>'500','msg'=>'Email password yang anda masukkan tidak sama','data'=>''];
+				echo json_encode($msg);
+				die();
+			}
 			$_SESSION['warning']='Password yang anda masukkan tidak sama';
 		}
 		else{
 
-			$data = array(
-				'uname' =>$this->input->post('uname') ,
-				'pass' => md5($password) ,
-				'fullname'=>$this->input->post('fullname'),
-				'phone'=>$this->input->post('phone'),
-				'email'=>$this->input->post('email'),
-				'flags'=>0,
-				);
+			$data=$this->input->post();
+			$data['pass']=md5($data['pass']);
+			if (isset($data['type'])) {
+				unset($data['type']);
+			}
+			unset($data['confirm_pass'],$data['g-recaptcha-response']);
 			$id=$this->member->input($data);
 			$pesan='<a href="'.base_url().'login/aktivasi/'.md5($id).'" <h4>Aktivasi Akun</h4></a>';
 			$email_config = Array(
@@ -88,8 +117,14 @@ class Login extends CI_Controller {
 	        $this->email->subject('Aktivasi Akun');
 	        $this->email->message($pesan);
 	        $this->email->send();
+	        if (isset($input['type']) && $input['type']=='API') {
+	        	$msg=['code'=>'200','msg'=>'Registrasi berhasil cek email ','data'=>''];
+	        	echo json_encode($msg);
+	        	die();
+	        }
 			$_SESSION['warning']='Silahkan cek email anda untuk aktivasi';
 		}
+		die();
 		// echo $data['message_display'];
 			redirect('/');
 	}

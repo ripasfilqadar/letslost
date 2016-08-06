@@ -51,8 +51,8 @@
       <div class="form-group">
         <label class="col-sm-2 control-label" >Gender</label>
         <div class="col-sm-10">
-          <input type="radio"  name="gender"> L
-          <input type="radio"  name="gender"> P          
+          <input type="radio"  name="gender" value="1"> L
+          <input type="radio"  name="gender" value="0"> P          
         </div>
       </div>          
 

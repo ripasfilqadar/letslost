@@ -1,11 +1,13 @@
-	  <!-- FOOTER -->
-<!--       <footer style="position:absolut; bottom:0px; left:0px">
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2016 LetsLost, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer> -->
-
-    </div> <!-- /container -->
-
+      <!-- FOOTER -->
+      <footer>      
+        <!-- <p class="pull-right"><a href="#">Back to top</a></p> -->
+        <center>
+          <p class="copy" style="color: white;">Copyright &copy; <a href="#" style="color: white;">Let&#39;s Lost</a> 2016. &middot; <a href="#" style="color: white;">Privacy</a> &middot; <a href="#" style="color: white;">Terms</a></p>
+        </center>
+      </footer>
+    </div>
+  </body>
+</html>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -13,7 +15,7 @@
     
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="<?php echo base_url()?>assets/js/ie10-viewport-bug-workaround.js"></script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+
 
 <div class="modal fade" tabindex="-1" role="dialog" id="warning">
   <div class="modal-dialog" role="document">

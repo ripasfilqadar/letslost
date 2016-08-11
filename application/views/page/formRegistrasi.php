@@ -1,3 +1,4 @@
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <form action="<?php echo base_url()?>login/signup" method="POST" class="form-horizontal">
       <div class="form-group">
         <label class="col-sm-2 control-label" >Name</label>

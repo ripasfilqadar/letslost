@@ -20,6 +20,7 @@ class UserPage extends CI_Controller {
 		$data['mytrips']=$this->tripModel->getBy(['organizer_id'=>$_SESSION['user']['user_id']]);
 		$data['jointrips']=$this->member->getTrip();	
 		// var_dump($data['mytrips']);	
+
 		$this->layout->render('user_page/profil',$data,$this->header);	
 	}
 	function editMember(){

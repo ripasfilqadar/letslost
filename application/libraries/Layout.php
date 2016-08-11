@@ -17,5 +17,11 @@ class Layout
 		$this->ci->load->view('page/modalAddTrip');
 		$this->ci->load->view('base/footer', $data);
 	}
+	function renderAdmin($url,$data=NULL)
+	{
+		$this->ci->load->view('admin/header',$data);
+		$this->ci->load->view($url);
+		$this->ci->load->view('admin/footer');
+	}
 }
 ?>

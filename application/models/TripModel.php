@@ -7,7 +7,7 @@ class TripModel extends Base_model {
 	    parent::__construct();          
 	}
 	function search($data){
-		$query='SELECT DISTINCT * FROM trip,cities WHERE destinate IN 
+		$query='SELECT DISTINCT *, city_name(start_city) AS start, city_name(destinate) as finish FROM trip,cities WHERE destinate IN 
 				(SELECT cities.city_id FROM countries ,cities  ,regions  WHERE countries.country_name LIKE("%'.$data["search"].'%") OR
 				regions.region_name LIKE("%'.$data["search"].'%") OR
 				cities.city_name LIKE("%'.$data["search"].'%")) 
@@ -26,6 +26,11 @@ class TripModel extends Base_model {
 		return $query->result_array();
 	}
 	
+	function get(){
+		$this->db->select("city_name(start_city) AS start, city_name(destinate) as finish, trip.*");
+		$query=$this->db->get('trip');
+		return $query->result_array();	
+	}
 
 }
 ?>

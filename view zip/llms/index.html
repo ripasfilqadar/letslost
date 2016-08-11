@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+		<title>Let's Lost</title>
+		
+		<!-- CSS  -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="css/bs/bootstrap.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="css/bs/bootstrap-select.min.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="css/datepicker.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="css/letslost.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="css/font-awesome.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		
+		<!-- JS -->
+		<script type="text/javascript" src="js/bs/jquery.js"></script>
+		<script type="text/javascript" src="js/bs/bootstrap.js"></script>
+		<script type="text/javascript" src="js/bs/bootstrap-select.min.js"></script>
+		<script type="text/javascript" src="js/bs/bootstrap-datepicker.js"></script>
+	</head>
+	
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				  <a class="navbar-brand" href="#">
+					<img src="img/logotype B.png" width="160px" height="22px">
+				  </a>
+				</div>
+
+				<div id="navbar" class="navbar-collapse collapse">
+
+				<!--?php if (!isset($_SESSION['user'])) { ?-->
+
+					<ul class="nav navbar-nav navbar-right">
+
+						<li class="dropdown">
+						
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">Sign in <b class="caret"></b></a>
+
+							<ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+								<li>
+								  <div class="row">
+									<div class="col-md-12">
+									  <form class="form" role="form" method="post" action="<?php echo base_url()?>login/checkLogin" accept-charset="UTF-8" id="login-nav">
+										<div class="form-group">
+										  <label class="sr-only" for="email">Email</label>
+										  <input type="text" name="email" id="email" class="form-control" required="required" placeholder="Email"/>
+										</div>
+										<div class="form-group">
+										  <label class="sr-only" for="password">Password</label>
+										  <input type="password" name="pass" id="password" class="form-control" required="required" placeholder="Password"/>
+										</div>
+										<div class="checkbox">
+										  <label>
+											<input type="checkbox"> Remember me
+										  </label>
+										</div>
+										<div class="form-group">
+										  <input type="submit" value="Login" class="btn btn-lg btn-block btn-primary vertical-offset-10"/>
+										</div>
+									  </form>
+									</div>
+								  </div>
+								</li>
+								<li>
+									<div>
+									  <span>No account yet?</span>
+									  <a href="register.html" style="margin-left: 5px" class="btn ladda-button btn-success btn-md" size="md">Register</a>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li class="divider-vertical"></li>
+					</ul>
+
+				<!--?php }
+
+				  else{ ?>
+
+				  <ul class="nav nav-pills navbar-right">
+
+					<li role="presentation" class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;"><?php echo $_SESSION['user']['uname']?>  <b class="caret"></b></a>
+
+						<ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+							<li><a href="<?php echo base_url()?>user/edit">Setting</a></li>
+							<li><a href="<?php echo base_url()?>userpage/profil">Profil</a></li>
+							<li><a href="<?php echo base_url()?>login/logout">Log Out</a></li>
+						</ul>
+					</li>
+
+				  </ul>
+
+				 <?php }
+
+				 ?> -->
+
+				</div><!--/.nav-collapse -->
+
+			</div>
+		</nav>
+		
+		<div class="container">
+			<br/><br/>
+			<div class="logo-responsive">
+				<img src="img/logo.png" alt="">
+			</div>
+
+			<div class="page-header">
+				<br/>
+				<center>
+					<form>
+						<div id="custom-search-input">
+							<div class="input-group col-md-12">
+								<input class="form-control input-lg" title="Places, Cities, Regions, Countries, anyware." placeholder="Places, Cities, Regions, Countries, anyware." type="text">
+								<span class="input-group-btn">
+									<button class="btn btn-danger" type="button">
+										<span class="fa fa-search"></span>
+									</button>
+								</span>
+							</div>
+						</div>
+						<div>
+							<a href="#modalAddTrip " data-toggle="modal" data-backdrop="static"  data-keyboard="false" ><u><h4 style="text-align:right; color:white">Or post a trip</h4></u></a>					
+						</div>
+					</form>
+				</center>
+			</div>
+			
+			<!-- Modal -->
+			<div class="modal fade" id="modalAddTrip" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Post Trip</h4>
+				  </div>
+				  <div class="modal-body">
+					Panggil Modal
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			
+			<!-- FOOTER -->
+			<footer>			
+				<!-- <p class="pull-right"><a href="#">Back to top</a></p> -->
+				<center>
+					<p class="copy" style="color: white;">Copyright &copy; <a href="#" style="color: white;">Let&#39;s Lost</a> 2016. &middot; <a href="#" style="color: white;">Privacy</a> &middot; <a href="#" style="color: white;">Terms</a></p>
+				</center>
+			</footer>
+		</div>
+	</body>
+</html>

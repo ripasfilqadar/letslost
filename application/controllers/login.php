@@ -7,7 +7,8 @@ class Login extends CI_Controller {
 		parent::__construct();
 		$this->load->library('Layout');
 		$this->load->model('member');
-		 $this->load->library('session');
+		$this->load->library('session');
+		$this->load->model('admin');
 		// $this->load->library('../controllers/EmailClass');
 	}
 
@@ -142,5 +143,26 @@ class Login extends CI_Controller {
 			$_SESSION['warning']='Aktivasi akun anda berhasil, silahkan login';
 		}
 		redirect('/');
+	}
+
+	function loginadmin()
+	{
+		$this->load->view('admin/login');
+	}
+	function checkloginadmin()
+	{
+		$input=$this->input->post();
+		$input['admin_pass']=md5($input['admin_pass']);
+		$admin=$this->admin->getBy($input);
+		if (sizeof($admin)==0) {
+			redirect('login/loginadmin');
+
+		}
+		else{
+			$update['last_login']=date('Y-m-d H:i:s');
+			$_SESSION['admin']=$admin[0];
+			$this->admin->update($input,$update);
+			redirect('adminpage');
+		}
 	}
 }

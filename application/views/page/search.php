@@ -1,73 +1,57 @@
-<section>
-  <div class="container_2 row">
-    <div class="hasil_search">
-      <?php foreach ($trip as $row) { ?>
-        <div class="kotakdata">
-          <div class="datarow" style="display:none">
-            <?php echo json_encode($row);?>
-          </div>
-          <div class="col-md-4">
-            <center>
-              <h4><?php echo $row['name']?></h4>
-              <h4>Trip to <?php echo $row['destinate']?></h4>
-            </center>
-          </div>
-          <div class="col-md-5">
-            <h4><?php echo date('d-m-Y',strtotime($row['timeheld'])).' - '.date('d-m-Y',strtotime($row['timeend']))?></h4>
-            <h4>Start From <?php echo $row['city_name']?></h4>
-          </div>
-          <div class="col-md-3">
-            <button class="btn btn-primary">View</button>
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <a href="<?php echo base_url()?>"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> back to Search Page</a>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-md-6">
+              <h1>Trips</h1>
+            </div>
+            <div class="col-md-6">
+              
+            </div>
+            <div class="col-md-12">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                    <th>Trip Name</th>
+                    <th>Location</th>
+                    <th>From</th>
+                    <th>Start</th>
+                    <th>Finish</th>
+                    <th>Details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php foreach ($trip as $row) {?>
+                      <tr class="listsearch">
+                      <td><?php echo $row['name']?>
+                      <br> <?php echo $row['desc']?><span style="display:none" class="datarow"><?php echo json_encode($row);?></span>
+                      </td>
+                      <td><?php echo $row['start']?></td>
+                      <td><?php echo $row['finish']?></td>
+                      <td><?php echo date('d-m-Y',strtotime($row['timeheld']))?></td>
+                      <td><?php echo date('d-m-Y',strtotime($row['timeend']))?></td>
+                      <td><button data-id="<?php echo $row['trip_id']?>" style="margin-left: 5px" class="btn ladda-button btn-info btn-md" size="md">View</button></td>
+                      </tr>
+                      
+                    <?php } ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
-        
-      <?php } ?>
-      
+      </div>
     </div>
-    
-  </div>
-</section>
-<script type="text/javascript">
-$.fn.modal.Constructor.prototype.enforceFocus = function () {};
-  $(".kotakdata button").click(function(){
-    var data=$(this).closest('.kotakdata').find('.datarow').text();
-    data=jQuery.parseJSON(data);
-    // console.log(data);
-        console.log(data.trip_id);
-    $(".table .listpartisipan").empty();
-    $.ajax({
-      method: "POST",
-      url: "<?php echo base_url()?>trip/checkPartisipant?>",
-      dataType: "json",
-      data:{'trip_id':data.trip_id},
-      success: function (response) {
-        $("#detailTrip table tbody").empty();
-        $("#detailTrip").modal('show');
-        $(".available").text(data.desc);
 
-        $(".partisipan").text(response.data.partisipan.length+" of "+data.quota+" partisipant");
-        $(".namaTrip").text(data.city_name);
-        $("#detailTrip [name='trip_id']").val(data.trip_id);
-        for (var i = 0; i < response.data.partisipan.length; i++) {
-          var text='<tr><td>'+(i+1)+'</td><td>'+response.data.partisipan[i].fullname+'</td></tr>';
-          $("#detailTrip table tbody").append(text); 
 
-        };
-        if (response.code==200) {
-          $("#detailTrip .modal-body .btn-primary").hide();
-        }
-        else{
-          $("#detailTrip .modal-body .btn-danger").hide();
-        }
-      },
-    });
-  });
-</script>
     <script type="text/javascript">
     var user=undefined;
     </script>
     <?php
-
     if (isset($_SESSION['user'])){?>
     <script type="text/javascript">
       var user='<?php echo json_encode($_SESSION["user"])?>';
@@ -92,8 +76,6 @@ $.fn.modal.Constructor.prototype.enforceFocus = function () {};
       $("#dataMember form h4").text('Join To '+name);
       $("#dataMember").modal('show');
   }
-
-
   function unjoin(){
     var trip_id=$("[name='trip_id']").val();
     $.ajax({
@@ -111,46 +93,7 @@ $.fn.modal.Constructor.prototype.enforceFocus = function () {};
 </script>
 
 
-<div class="modal fade" tabindex="-1" role="dialog" id="detailTrip">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>        
-      </div>
-      <div class="modal-body">
-        <div>
-          <h4>Trip To <span class="namaTrip"></span></h4>
-          <form class="join" method="POST" >
-            <input type="hidden" name="trip_id">
-            <button type="button" class="btn btn-primary" onclick="join()">Join</button>
-          </form>
-          <form class="unjoin" >
-            <input type="hidden" name="trip_id" >
-            <button type="button" class="btn btn-danger" onclick="unjoin()">Unjoin</button>
-          </form>
-          
-        </div>
-        <div class="desc">
-          
-        </div>
-        <div class="sisa">
-          <h4 class="available">Available</h4>
-          <h4 class="partisipan">partisipan</h4>
-        </div>
-        <div>
-          <table class="listpartisipan">
-            <tbody>
-              
-            </tbody>
-            
-          </table>
-        </div>
-      </div>
-      <div class="modal-footer">
-      </div>
-    </div>
-  </div>
-</div>
+<?php include 'detailTrip.php';?>
 
 <div class="modal fade" tabindex="-1" role="dialog" id="joinTrip">
   <div class="modal-dialog" role="document">
@@ -242,4 +185,4 @@ $.fn.modal.Constructor.prototype.enforceFocus = function () {};
       </form>
     </div>
   </div>
-</div>
+</div>    

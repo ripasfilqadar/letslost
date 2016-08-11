@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+		<title>Let's Lost</title>
+		
+		<!-- CSS  -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="css/bs/bootstrap.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="css/bs/bootstrap-select.min.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="css/datepicker.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="css/letslost.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="css/font-awesome.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="css/form-elements.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		
+		<!-- JS -->
+		<script type="text/javascript" src="js/bs/jquery.js"></script>
+		<script type="text/javascript" src="js/bs/bootstrap.js"></script>
+		<script type="text/javascript" src="js/bs/bootstrap-select.min.js"></script>
+		<script type="text/javascript" src="js/bs/bootstrap-datepicker.js"></script>
+	</head>
+	
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				  <a class="navbar-brand" href="#">
+					<img src="img/logotype B.png" width="160px" height="22px">
+				  </a>
+				</div>
+
+				<div id="navbar" class="navbar-collapse collapse">
+
+				<!--?php if (!isset($_SESSION['user'])) { ?-->
+
+					<ul class="nav navbar-nav navbar-right">
+
+						<li class="dropdown">
+						
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">Sign in <b class="caret"></b></a>
+
+							<ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+								<li>
+								  <div class="row">
+									<div class="col-md-12">
+									  <form class="form" role="form" method="post" action="<?php echo base_url()?>login/checkLogin" accept-charset="UTF-8" id="login-nav">
+										<div class="form-group">
+										  <label class="sr-only" for="email">Email</label>
+										  <input type="text" name="email" id="email" class="form-control" required="required" placeholder="Email"/>
+										</div>
+										<div class="form-group">
+										  <label class="sr-only" for="password">Password</label>
+										  <input type="password" name="pass" id="password" class="form-control" required="required" placeholder="Password"/>
+										</div>
+										<div class="checkbox">
+										  <label>
+											<input type="checkbox"> Remember me
+										  </label>
+										</div>
+										<div class="form-group">
+										  <input type="submit" value="Login" class="btn btn-lg btn-block btn-primary vertical-offset-10"/>
+										</div>
+									  </form>
+									</div>
+								  </div>
+								</li>
+								<li>
+									<div>
+									  <span>No account yet?</span>
+									  <a href="#modalRegistrasi" data-toggle="modal" style="margin-left: 5px" class="btn ladda-button btn-success btn-md" size="md">Register</a>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li class="divider-vertical"></li>
+					</ul>
+
+				<!--?php }
+
+				  else{ ?>
+
+				  <ul class="nav nav-pills navbar-right">
+
+					<li role="presentation" class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;"><?php echo $_SESSION['user']['uname']?>  <b class="caret"></b></a>
+
+						<ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+							<li><a href="<?php echo base_url()?>user/edit">Setting</a></li>
+							<li><a href="<?php echo base_url()?>userpage/profil">Profil</a></li>
+							<li><a href="<?php echo base_url()?>login/logout">Log Out</a></li>
+						</ul>
+					</li>
+
+				  </ul>
+
+				 <?php }
+
+				 ?>-->
+
+				</div><!--/.nav-collapse -->
+
+			</div>
+		</nav>
+		
+		<div class="container">
+			<div class="row">
+                <div class="col-sm-5">
+                	<div class="form-box">
+	                	<div class="form-top">
+	                		<div class="form-top-left">
+	                			<h3>Login to Let's Lost</h3>
+	                    		<p>Enter username and password to log on:</p>
+	                		</div>
+	                		<div class="form-top-right">
+	                			<i class="fa fa-key"></i>
+	                		</div>
+	                    </div>
+	                    <div class="form-bottom">
+			                <form role="form" action="" method="post" class="login-form">
+			                	<div class="form-group">
+			                		<label class="sr-only" for="form-username">Username</label>
+			                    	<input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+			                    </div>
+			                    <div class="form-group">
+			                    	<label class="sr-only" for="form-password">Password</label>
+			                    	<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+			                    </div>
+			                    <button type="submit" class="btn">Sign in!</button>
+			                </form>
+			            </div>
+		            </div>
+		        
+		        	<div class="social-login">
+	                	<h3>...or login with:</h3>
+	                	<div class="social-login-buttons">
+		                	<a class="btn btn-link-1 btn-link-1-facebook" href="#">
+		                		<i class="fa fa-facebook"></i> Facebook
+		                	</a>
+		                	<a class="btn btn-link-1 btn-link-1-twitter" href="#">
+		                		<i class="fa fa-twitter"></i> Twitter
+		                	</a>
+		                	<a class="btn btn-link-1 btn-link-1-google-plus" href="#">
+		                		<i class="fa fa-google-plus"></i> Google Plus
+		                	</a>
+	                	</div>
+	                </div>
+	                
+                </div>
+                
+                <div class="col-sm-1 middle-border"></div>
+                <div class="col-sm-1"></div>
+                	
+                <div class="col-sm-5">
+                	
+                	<div class="form-box">
+                		<div class="form-top">
+	                		<div class="form-top-left">
+	                			<h3>Sign up now</h3>
+	                    		<p>Fill in the form below to get instant access:</p>
+	                		</div>
+	                		<div class="form-top-right">
+	                			<i class="fa fa-pencil"></i>
+	                		</div>
+	                    </div>
+	                    <div class="form-bottom">
+			                <form role="form" action="" method="post" class="registration-form">
+			                	<div class="form-group">
+			                		<label class="sr-only" for="form-first-name">First name</label>
+			                    	<input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
+			                    </div>
+			                    <div class="form-group">
+			                    	<label class="sr-only" for="form-last-name">Last name</label>
+			                    	<input type="text" name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
+			                    </div>
+			                    <div class="form-group">
+			                    	<label class="sr-only" for="form-email">Email</label>
+			                    	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+			                    </div>
+			                    <div class="form-group">
+			                    	<label class="sr-only" for="form-email">Password</label>
+			                    	<input type="password" name="form-password" placeholder="Password..." class="form-email form-control" id="form-password">
+			                    </div>
+			                    <div class="form-group">
+			                    	<label class="sr-only" for="form-email">Confirm Password</label>
+			                    	<input type="password" name="form-cpassword" placeholder="Confirm Password..." class="form-email form-control" id="form-cpassword">
+			                    </div>
+			                    <button type="submit" class="btn">Sign me up!</button>
+			                </form>
+			            </div>
+                	</div>
+                	
+                </div>
+            </div>
+            
+        </div>
+
+			<!-- FOOTER -->
+			<footer>			
+				<!-- <p class="pull-right"><a href="#">Back to top</a></p> -->
+				<center>
+					<p class="copy" style="color: white;">Copyright &copy; <a href="#" style="color: white;">Let&#39;s Lost</a> 2016. &middot; <a href="#" style="color: white;">Privacy</a> &middot; <a href="#" style="color: white;">Terms</a></p>
+				</center>
+			</footer>
+		</div>
+	</body>
+</html>

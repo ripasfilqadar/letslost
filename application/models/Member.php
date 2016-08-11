@@ -7,8 +7,7 @@ class Member extends Base_model {
 	    parent::__construct();          
 	}
 	function getData(){
-		$this->db->join('regions','regions.region_id=member.region');
-		$this->db->join('cities','cities.city_id=member.city_id');
+		$this->db->select("city_name(city_id) AS city_name, region_name(region) as region_name, member.*");		
 		$result=$this->db->get('member');
 		return $result->result_array();
 	}

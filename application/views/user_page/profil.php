@@ -1,134 +1,145 @@
-<section>
-	<div class="col-md-2"></div>
-	<div class="row row col-md-8 col-md-offset-2" style="background:white;border-radius:10px;margin-left:auto">
-		<div class="col-md-12" >
-		<div style="float:right">
-			<button class="btn btn-primary" data-toggle="modal" data-target="#editModal">Update Profile</button>
-		</div>
-			<div class="col-md-6">
-				<center>
-					<h4>@<?php echo $profil['uname']?></h4>
-					<table>
-						<tr>
-							<td>Nama</td>
-							<td><?php echo $profil['fullname']?></td>
-						</tr>
-						<tr>
-							<td>HP</td>
-							<td><?php echo $profil['phone']?></td>
-						</tr>
-						<tr>
-							<td>Mail</td>
-							<td><?php echo $profil['email']?></td>
-						</tr>
-					</table>
-				</center>
+		<div class="container">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<a href="index.html"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> back to Search Page</a>
+				</div>
+				<div class="panel-footer">
+					<div class="row">
+					  <div class="col-md-6">
+						<h2>@<?php echo $profil['uname']?></h2>
+						<p><i class="fa fa-user" aria-hidden="true"></i> Name: <?php echo $profil['fullname']?> </p>
+						<p><i class="fa fa-phone" aria-hidden="true"></i> Phone: <?php echo $profil['phone']?> </p>
+						<p><i class="fa fa-inbox" aria-hidden="true"></i> Mail: <?php echo $profil['email'] ?></p>
+					  </div>
+					  <div class="col-md-6">
+						<div class="col-md-6">.</div>
+						<div class="col-md-6">
+							<div class="col-md-6">.</div>
+							<div class="col-md-6">
+								<a href="#update" data-toggle="modal" data-backdrop="static"  data-keyboard="false"   style="margin-left: 5px" class="btn ladda-button btn-danger btn-md" size="md">Update Profile</a>
+							</div>
+						</div>
+						<!-- <p><i class="fa fa-street-view" aria-hidden="true"></i> Address:  </p> -->
+						<p><i class="fa fa-calendar" aria-hidden="true"></i> Birthday: <?php echo date('d-m-Y',strtotime($profil['born']))?></p>
+						<p><i class="fa fa-globe" aria-hidden="true"></i> Nationality: Indonesia</p>
+					  </div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<h1>My Trips</h1>
+							<div class="table-responsive">
+								<table class="table">
+									<thead>
+									  <tr>
+										<th>Trip Name</th>
+										<th>Location</th>
+										<th>From</th>
+										<th>Start</th>
+										<th>Finish</th>
+										<th>Details</th>
+									  </tr>
+									</thead>
+									<tbody>
+									<?php foreach ($mytrips as $row) { ?>
+									  <tr class="listsearch">
+										<td><?php echo $row['name']?>
+					                      <br> <?php echo $row['desc']?><span style="display:none" class="datarow"><?php echo json_encode($row);?></span>
+					                      </td>
+					                      <td><?php echo $row['start']?></td>
+					                      <td><?php echo $row['finish']?></td>
+					                      <td><?php echo date('d-m-Y',strtotime($row['timeheld']))?></td>
+					                      <td><?php echo date('d-m-Y',strtotime($row['timeend']))?></td>
+					                      <td><button href="<?php echo base_url()?>page/detail" style="margin-left: 5px" class="btn ladda-button btn-info btn-md" size="md">View</button></td>
+					                    </tr>
+									<?php } ?>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<h1>Trip's 1 Joined</h1>
+							<div class="table-responsive">
+								<table class="table">
+									<thead>
+									  <tr>
+										<th>Trip Name</th>
+										<th>Location</th>
+										<th>From</th>
+										<th>Start</th>
+										<th>Finish</th>
+										<th>Details</th>
+									  </tr>
+									</thead>
+									<tbody>
+									  <?php foreach ($jointrips as $row) { ?>
+									  <tr class="listsearch">
+										<td><?php echo $row['name']?>
+					                      <br> <?php echo $row['desc']?><span style="display:none" class="datarow"><?php echo json_encode($row);?></span>
+					                      </td>
+					                      <td><?php echo $row['start']?></td>
+					                      <td><?php echo $row['finish']?></td>
+					                      <td><?php echo date('d-m-Y',strtotime($row['timeheld']))?></td>
+					                      <td><?php echo date('d-m-Y',strtotime($row['timeend']))?></td>
+					                      <td><button style="margin-left: 5px" class="btn ladda-button btn-info btn-md" size="md">View</button></td>
+					                   </tr>
+									<?php } ?>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="col-md-6">
-				<center>
-					<table>
-						<tr>
-							<td>
-								<!-- <?php echo $profil['region_name'].', '.$profil['city_name'];?> -->
-							</td>
-						</tr>
-						<tr>
-							
-						</tr>
-					</table>
-				</center>
-			</div>
-			
 		</div>
-
-		<div class="col-md-6">
-			<h4>My Trips</h4>
-			<?php
-			foreach ($mytrips as $mytrip) { ?>
-			<div class="col-md-12">
-				<div class="col-md-6">
-					<div class="col-md-6"><?php echo $mytrip['name']?></div>
-					<div class="col-md-6"><?php echo date('d/m/Y', strtotime($mytrip['timeheld'])).' To '.date('d/m/Y',strtotime($mytrip['timeend']))?> </div>
-				</div>
-				<div class="col-md-6">
-					<div class="col-md-6"><?php echo $mytrip['destinate'];?></div>
-					<div class="col-md-6"><?php echo 'Start from '.$mytrip['start']?></div>					
-				</div>
-				<div>
-					<a href="<?php echo base_url()?>userpage/detailtrip/<?php echo $mytrip['trip_id']?>"> <button data-id=<?php echo $mytrip['trip_id'];?>>View</button></a>
-				</div>
-				
-			</div>
-			<?php } ?>
-		</div>
-		<div class="col-md-6">
-			<h4>Trip(s) Joined</h4>
-			<?php
-			foreach ($jointrips as $jointrip) { ?>
-			<div class="col-md-12">
-				<div class="col-md-6">
-					<div class="col-md-6"><?php echo $jointrip['name']?></div>
-					<div class="col-md-6"><?php echo date('d/m/Y', strtotime($jointrip['timeheld'])).' To '.date('d/m/Y',strtotime($jointrip['timeend']))?> </div>
-				</div>
-				<div class="col-md-6">
-					<div class="col-md-6"><?php echo $jointrip['destinate'];?></div>
-					<div class="col-md-6"><?php echo 'Start from '.$jointrip['start']?></div>					
-				</div>
-				<div>
-					<button data-id=<?php echo $jointrip['trip_id'];?>>View</button>
-				</div>
-				
-			</div>
-			<?php } ?>
-		</div>
-	</div>
 		
-</section>
+		<!-- Modal -->
+		<div class="modal fade" id="update" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Update Profile</h4>
+			  </div>
+			  <div class="modal-body">
+				<form action="<?php echo base_url()?>login/update" method="POST" class="form-horizontal">
+					<div class="form-group">
+					  <label class="col-sm-2 control-label" >Nama</label>
+					  <div class="col-sm-10">
+						<input type="text" class="form-control" placeholder="Nama" name="fullname" value="<?php echo $_SESSION['user']['fullname']?>">              
+					  </div>
+					</div>
+					
+					<div class="form-group">
+					  <label class="col-sm-2 control-label" >Nomor HP</label>
+					  <div class="col-sm-10">
+						<input type="text" class="form-control" placeholder="Nomor HP" name="phone" value="<?php echo $_SESSION['user']['phone']?>">              
+					  </div>
+					</div>
+					
+					<div class="form-group">
+					  <label class="col-sm-2 control-label" >Email</label>
+					  <div class="col-sm-10">
+						<input type="email" class="form-control" placeholder="Mail" name="email" value="<?php echo $_SESSION['user']['phone']?>">              
+					  </div>
+					</div>
 
-<div class="modal fade" tabindex="-1" role="dialog" id="editModal">
-  <div class="modal-dialog" role="document">
-    <form action="<?php echo base_url()?>userpage/editmember" method="POST" class="form-horizontal">
-    <input type="hidden" name="user_id" value="<?php echo $profil['user_id'];?>">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Edit Profile</h4>
-      </div>
-      <div class="modal-body">
-          <div class="form-group">
-            <label class="col-sm-2 control-label" >Name</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" placeholder="Name" name="fullname" value="<?php echo $profil['fullname']?>">              
-            </div>
-          </div>
+					<div class="form-group">
+					  <label class="col-sm-2 control-label" >Alamat</label>
+					  <div class="col-sm-10">
+						  <textarea class="form-control" rows="5" placeholder="Alamat"></textarea>     
+					  </div>
+					</div>
+					
+					<!-- Jenis Kelamin DropDown -->
+					<!-- Tanggal Lahir Datetimepicker -->
+					<!-- Negara DropDown -->
+			  </div>
+			  <div class="modal-footer">
+				  <button type="submit" class="btn btn-primary">Save</button>
+			  </div>
+			</form>
+			</div>
+		  </div>
+		</div>
 
-          <div class="form-group">
-            <label class="col-sm-2 control-label" >Username</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" placeholder="Username" name="uname" value="<?php echo $profil['uname']?>">            
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-2 control-label" >HP</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" placeholder="HP" name="phone" value="<?php echo $profil['phone']?>">            
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-2 control-label" >Email</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" placeholder="E-Mail" name="email" value="<?php echo $profil['email']?>">             
-            </div>
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Edit Profile</button>
-      </div>
-    </form>
-    </div>
-  </div>
-</div>
-
+<?php $this->view('page/detailTrip.php'); ?>

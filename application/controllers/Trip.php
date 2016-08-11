@@ -102,11 +102,16 @@ class Trip extends CI_Controller {
 	}
 	function unjoin(){
 		$input=$this->input->post();
-		echo json_encode($input);
-		die();
-		$input['user_id']=$_SESSION['user']['user_id'];
+		
+		if (isset($input['type'])) {
+			$type=$input['type'];
+			unset($input['type']);
+		}
+		if (!isset($input['user_id'])) {
+			$input['user_id']=$_SESSION['user']['user_id'];			
+		}
 		$this->partisipant->delete($input);
-		$msg=['code'=>200, 'msg'=>'Anda batal mengikuti trip'];
+		$msg=['code'=>200, 'msg'=>'Anda batal mengikuti trip','data'=>''];
 		echo json_encode($msg);
 	}
 	function update(){
@@ -157,7 +162,6 @@ class Trip extends CI_Controller {
 		
 		if (intval($trip['organizer_id'])!=intval($user_id)) {
 			$warning='Terjadi kesalahan';
-			echo 'alala';
 			if (isset($type)) {
 				$msg=['code'=>'500','msg'=>$warning,'data'=>''];
 				echo json_encode($msg);

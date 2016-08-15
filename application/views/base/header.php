@@ -53,7 +53,7 @@
                 <li>
                   <div>
                     <span>No account yet?</span>
-                    <a href="register.html" style="margin-left: 5px" class="btn ladda-button btn-success btn-md" size="md">Register</a>
+                    <a href="<?php echo base_url()?>login/registerpage" style="margin-left: 5px" class="btn ladda-button btn-success btn-md" size="md">Register</a>
                   </div>
                 </li>
               </ul>
@@ -66,14 +66,14 @@
             <li><a href="#modalAddTrip " data-toggle="modal" data-backdrop="static"  data-keyboard="false" style="color: white;">Post a Trip</a></li>
             <li class="dropdown">
             
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">@letslostinc <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">@<?php echo $_SESSION['user']['uname']?> <b class="caret"></b></a>
 
               <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
                 <li><a href="<?php echo base_url()?>userpage/profil">Your Profile</a></li>
                 <li><a href="trip.html">Your Trip</a></li>
                 <li><a href="#">Change Password</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
+                <li><a href="<?php echo base_url()?>login/logout">Logout</a></li>
               </ul>
             </li>
             <li class="divider-vertical"></li>

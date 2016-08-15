@@ -11,13 +11,13 @@
     <title>LetsLost</title>
     
     <!-- CSS  -->
-    <link href="<?php echo base_url()?>assets/css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/datepicker.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/bootstrap-select.min.css">
-    <link href="<?php echo base_url()?>assets/css/font-awesome.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="<?php echo base_url()?>assets/css/icon.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>assets/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/datepicker.css">
     <link href="<?php echo base_url()?>assets/css/letslost.css" rel="stylesheet">
-    <link href="<?php echo base_url()?>assets/css/custom.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>assets/css/font-awesome.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
     
     <!-- JS -->
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/jquery.js"></script>

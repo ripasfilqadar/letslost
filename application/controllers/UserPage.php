@@ -21,7 +21,7 @@ class UserPage extends CI_Controller {
 		$data['jointrips']=$this->member->getTrip();	
 		// var_dump($data['mytrips']);	
 
-		$this->layout->render('user_page/profil',$data,$this->header);	
+		$this->layout->renderUser('user_page/profil',$data);	
 	}
 	function editMember(){
 		$input=$this->input->post();
@@ -44,6 +44,16 @@ class UserPage extends CI_Controller {
 			$data['trip']=$data['trip'][0];
 		}
 		$data['partisipant']=$this->partisipant->getBy(['trip_id'=>$id]);
-		$this->layout->render('user_page/detail-trip',$data,$this->header);
+		$this->layout->renderUser('user_page/detail-trip',$data);
+	}
+	function manageTrip($id=NULL){
+		if ($id==NULL) {
+			redirect('userpage/profil');
+		}
+		$data['trip']=$this->tripModel->getBy(['trip_id'=>$id]);
+		if (sizeof($data['trip']>0)) $data['trip']=$data['trip'][0];
+
+		$data['partisipant']=$this->partisipant->getBy(['trip_id'=>$id]);
+		$this->layout->renderUser('user_page/manageTrip',$data);
 	}
 }

@@ -58,14 +58,15 @@ class Login extends CI_Controller {
 
 		$secret='6LcBsyYTAAAAAMBYJeoS5P72Ge36lhY50ueDW6Lm';
 		$input=$this->input->post();
-		if (!isset($input['type'])) {
+/*		if (!isset($input['type'])) {
 			$result=file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$this->input->post("g-recaptcha-response"));
 			$result=json_decode($result,true);
 			if ($result['success']==false) {
 				$_SESSION['warning']='Captcha tidak valid';
 				redirect('/');
 			}			
-		}
+		}*/
+
 
 		$update=['email'=>$this->input->post('email')];
 		$user=$this->member->getBy($update);
@@ -91,11 +92,13 @@ class Login extends CI_Controller {
 		else{
 
 			$data=$this->input->post();
+			print_r($data);
 			$data['pass']=md5($data['pass']);
 			if (isset($data['type'])) {
 				unset($data['type']);
 			}
-			unset($data['confirm_pass'],$data['g-recaptcha-response']);
+			$data['fullname']=$data['first_name'].' '.$data['last_name'];
+			unset($data['confirm_pass'],$data['g-recaptcha-response'],$data['last_name'],$data['first_name']);
 			$id=$this->member->input($data);
 			$pesan='<a href="'.base_url().'login/aktivasi/'.md5($id).'" <h4>Aktivasi Akun</h4></a>';
 			$email_config = Array(
@@ -164,5 +167,9 @@ class Login extends CI_Controller {
 			$this->admin->update($input,$update);
 			redirect('adminpage');
 		}
+	}
+
+	function registerpage(){
+		$this->layout->render('page/registrasi-page');
 	}
 }

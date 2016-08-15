@@ -1,7 +1,7 @@
 		<div class="container">
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<a href="index.html"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> back to Search Page</a>
+					<a href="<?php echo base_url()?>"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> back to Search Page</a>
 				</div>
 				<div class="panel-footer">
 					<div class="row">
@@ -49,7 +49,7 @@
 					                      <td><?php echo $row['finish']?></td>
 					                      <td><?php echo date('d-m-Y',strtotime($row['timeheld']))?></td>
 					                      <td><?php echo date('d-m-Y',strtotime($row['timeend']))?></td>
-					                      <td><button href="<?php echo base_url()?>page/detail" style="margin-left: 5px" class="btn ladda-button btn-info btn-md" size="md">View</button></td>
+					                      <td><a href="<?php echo base_url()?>userpage/manageTrip/<?php echo $row['trip_id']?>"  style="margin-left: 5px" class="btn ladda-button btn-info btn-md" size="md" data-select="detailTrip">View</a></td>
 					                    </tr>
 									<?php } ?>
 									</tbody>
@@ -80,7 +80,7 @@
 					                      <td><?php echo $row['finish']?></td>
 					                      <td><?php echo date('d-m-Y',strtotime($row['timeheld']))?></td>
 					                      <td><?php echo date('d-m-Y',strtotime($row['timeend']))?></td>
-					                      <td><button style="margin-left: 5px" class="btn ladda-button btn-info btn-md" size="md">View</button></td>
+					                      <td><button style="margin-left: 5px" class="btn ladda-button btn-info btn-md" size="md" data-select="detailTrip">View</button></td>
 					                   </tr>
 									<?php } ?>
 									</tbody>

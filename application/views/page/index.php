@@ -25,3 +25,4 @@
 				</center>
 			</div>
 <?php include 'modalRegistrasi.php';			
+ include 'modalAddTrip.php';			?>

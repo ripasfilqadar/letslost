@@ -60,7 +60,8 @@ class Trip extends CI_Controller {
 		}
 	}
 	function join(){
-		$input=$this->input->post();		
+		$input=$this->input->post();	
+		// print_r($input)	;die();
 		if (isset($_SESSION['user'])) {
 			$user=$this->member->getBy(['user_id'=>$_SESSION['user']['user_id']]);
 
@@ -116,7 +117,6 @@ class Trip extends CI_Controller {
 	}
 	function update(){
 		$input=$this->input->post();
-
 		if (isset($input['type']) && $input['type']=='API') {
 			$type=$input['type'];
 			$user_id=$input['organizer_id'];
@@ -126,7 +126,9 @@ class Trip extends CI_Controller {
 			$user_id=$_SESSION['user']['user_id'];
 		}
 
+		
 		$trip=$this->tripModel->getBy(['trip_id'=>$input['trip_id']])[0];
+		
 		
 		if (intval($trip['organizer_id'])!=intval($user_id)) {
 			$warning='Terjadi kesalahan';
@@ -136,7 +138,7 @@ class Trip extends CI_Controller {
 				die();
 			}
 			$_SESSION['warning']=$warning;
-			redirect('userpage/profil');
+			redirect('userpage/manageTrip/'.$input['trip_id']);
 		}
 		$this->tripModel->update(['trip_id'=>$input['trip_id']],$input);
 		if (isset($type)) {
@@ -145,7 +147,7 @@ class Trip extends CI_Controller {
 			echo json_encode($msg);
 			die();
 		}
-		redirect('userpage/detailtrip/'.$input['trip_id']);
+		redirect('userpage/manageTrip/'.$input['trip_id']);
 	}
 	function delete(){
 		$input=$this->input->post();

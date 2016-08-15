@@ -9,17 +9,17 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="<?php echo base_url()?>">
           <img src="<?php echo base_url()?>assets/img/logotype B.png" width="160px" height="22px">
           </a>
         </div>
         
-        <form class="navbar-form navbar-left">
+        <form class="navbar-form navbar-left" action="<?php echo base_url()?>page/search">
           <div id="custom-search-input2">
             <div class="input-group col-md-12">
-              <input class="form-control" title="Places, Cities, Regions, Countries, anyware." placeholder="Places, Cities, Regions, Countries, anyware." type="text">
+              <input class="form-control" title="Places, Cities, Regions, Countries, anyware." placeholder="Places, Cities, Regions, Countries, anyware." type="text" name="search">
               <span class="input-group-btn">
-                <button class="btn btn-danger" type="button">
+                <button class="btn btn-danger" type="submit">
                   <span class="fa fa-search"></span>
                 </button>
               </span>

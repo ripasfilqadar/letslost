@@ -82,7 +82,7 @@
 			                    	<input type="password" name="confirm_pass" placeholder="Confirm Password..." class="form-email form-control" id="form-cpassword">
 			                    </div>
 			                    <div class="form-group">
-			                    	<div class="g-recaptcha" data-sitekey="6LcBsyYTAAAAAD_D1iuhLN2GFhW-oy0wXrsOxkzU"></
+			                    	<div class="g-recaptcha" data-sitekey="6LcBsyYTAAAAAD_D1iuhLN2GFhW-oy0wXrsOxkzU"></div>
 			                    </div>
 			                    <button type="submit" class="btn">Sign me up!</button>
 			            	</div>

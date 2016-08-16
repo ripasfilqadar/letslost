@@ -113,6 +113,7 @@ CREATE TABLE `member` (
   `gender` int(11) DEFAULT '0',
   `lastlog` timestamp NULL DEFAULT NULL,
   `flags` tinyint(4) DEFAULT '1',
+  `alamat` varchar(200) DEFAULT '1',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `id_UNIQUE` (`user_id`),
   KEY `fk_user_1_idx` (`city_id`),

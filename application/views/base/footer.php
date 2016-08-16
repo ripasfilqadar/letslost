@@ -56,6 +56,14 @@ if (isset($_SESSION['warning'])) {
     autoclose: true,
     format: 'dd-mm-yyyy',
   });
+  $(".datepicker.dropdown-menu").click(function(){
+      $(this).hide();
+  });
+
+
+  $("[name='search']").keyup(function(){
+    alert('ll');
+  });
 </script>
 
   </body>

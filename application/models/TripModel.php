@@ -7,16 +7,17 @@ class TripModel extends Base_model {
 	    parent::__construct();          
 	}
 	function search($data){
-		$query='SELECT DISTINCT *, city_name(start_city) AS start, city_name(destinate) as finish FROM trip,cities WHERE destinate IN 
-				(SELECT cities.city_id FROM countries ,cities  ,regions  WHERE countries.country_name LIKE("%'.$data["search"].'%") OR
+		$query='SELECT DISTINCT *, city_name(start_city) AS start, city_name(destinate) as finish FROM trip WHERE destinate IN 
+				(SELECT DISTINCT cities.city_id FROM countries ,cities  ,regions  WHERE countries.country_name LIKE("%'.$data["search"].'%") OR
 				regions.region_name LIKE("%'.$data["search"].'%") OR
-				cities.city_name LIKE("%'.$data["search"].'%")) 
-				or start_city IN 
+				cities.city_name LIKE("%'.$data["search"].'%")) or 
+				start_city IN 
 				(SELECT cities.city_id FROM countries ,cities  ,regions  WHERE countries.country_name LIKE("%'.$data["search"].'%") OR
 				regions.region_name LIKE("%'.$data["search"].'%") OR
 				cities.city_name LIKE("%'.$data["search"].'%")) 
 				AND timeheld >= NOW()
-				or name LIKE("%'.$data["search"].'%") and start_city=city_id';
+				or name LIKE("%'.$data["search"].'%")';
+		
 		$result=$this->db->query($query);
 		return $result->result_array();
 	}

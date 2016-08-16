@@ -58,14 +58,14 @@ class Login extends CI_Controller {
 
 		$secret='6LcBsyYTAAAAAMBYJeoS5P72Ge36lhY50ueDW6Lm';
 		$input=$this->input->post();
-/*		if (!isset($input['type'])) {
+		if (!isset($input['type'])) {
 			$result=file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$this->input->post("g-recaptcha-response"));
 			$result=json_decode($result,true);
 			if ($result['success']==false) {
 				$_SESSION['warning']='Captcha tidak valid';
 				redirect('/');
 			}			
-		}*/
+		}
 
 
 		$update=['email'=>$this->input->post('email')];
@@ -92,7 +92,6 @@ class Login extends CI_Controller {
 		else{
 
 			$data=$this->input->post();
-			print_r($data);
 			$data['pass']=md5($data['pass']);
 			if (isset($data['type'])) {
 				unset($data['type']);
@@ -128,7 +127,6 @@ class Login extends CI_Controller {
 	        }
 			$_SESSION['warning']='Silahkan cek email anda untuk aktivasi';
 		}
-		die();
 		// echo $data['message_display'];
 			redirect('/');
 	}

@@ -27,3 +27,4 @@
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/bootstrap-datepicker.js"></script>
   </head>
+  <script type="text/javascript" src="<?php echo base_url()?>json/json.js"></script>

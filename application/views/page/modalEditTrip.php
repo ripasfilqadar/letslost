@@ -44,14 +44,14 @@
         <div class="form-group">
           <label class="col-sm-2 control-label" >Tanggal Berangkat</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control datepicker" name="timeheld" value="<?php echo $trip['timeheld']?>">            
+            <input type="text" class="form-control datepicker" name="timeheld" value="<?php echo date('d-m-Y',strtotime($trip['timeheld']))?>">            
           </div>
         </div>
 
         <div class="form-group">
            <label class="col-sm-2 control-label" >Tanggal Pulang</label>
            <div class="col-sm-10">
-            <input type="text" class="form-control datepicker" name="timeend" value="<?php echo $trip['timeend']?>">            
+            <input type="text" class="form-control datepicker" name="timeend"value="<?php echo date('d-m-Y',strtotime($trip['timeend']))?>">            
           </div>
         </div>
 

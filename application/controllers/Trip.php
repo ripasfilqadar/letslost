@@ -140,6 +140,8 @@ class Trip extends CI_Controller {
 			$_SESSION['warning']=$warning;
 			redirect('userpage/manageTrip/'.$input['trip_id']);
 		}
+		$input['timeend']=date('Y-m-d',strtotime($input['timeend']));
+		$input['timeheld']=date('Y-m-d',strtotime($input['timeheld']));
 		$this->tripModel->update(['trip_id'=>$input['trip_id']],$input);
 		if (isset($type)) {
 			$trip=$this->tripModel->getBy(['trip_id'=>$input['trip_id']])[0];

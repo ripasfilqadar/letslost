@@ -7,29 +7,28 @@ class TripModel extends Base_model {
 	    parent::__construct();          
 	}
 	function search($data){
-		$query='SELECT DISTINCT *, city_name(start_city) AS start, city_name(destinate) as finish FROM trip WHERE destinate IN 
-				(SELECT DISTINCT cities.city_id FROM countries ,cities  ,regions  WHERE countries.country_name LIKE("%'.$data["search"].'%") OR
-				regions.region_name LIKE("%'.$data["search"].'%") OR
-				cities.city_name LIKE("%'.$data["search"].'%")) or 
-				start_city IN 
-				(SELECT cities.city_id FROM countries ,cities  ,regions  WHERE countries.country_name LIKE("%'.$data["search"].'%") OR
-				regions.region_name LIKE("%'.$data["search"].'%") OR
-				cities.city_name LIKE("%'.$data["search"].'%")) 
-				AND timeheld >= NOW()
-				or name LIKE("%'.$data["search"].'%")';
+		$query='SELECT * FROM trip_view 
+				WHERE start_country LIKE ("%'.$data["search"].'%") 
+					OR start_city LIKE ("%'.$data["search"].'%") 
+        				OR dest_country LIKE ("%'.$data["search"].'%") 
+        				OR dest_reg LIKE ("%'.$data["search"].'%") 
+        				OR dest_city LIKE ("%'.$data["search"].'%")
+        				OR destinate LIKE ("%'.$data["search"].'%")
+					AND timeheld >= NOW()
+					OR trip_name LIKE ("%'.$data["search"].'%");';
 		
 		$result=$this->db->query($query);
 		return $result->result_array();
 	}
 	function getBy($data){
-		$this->db->select("city_name(start_city) AS start, city_name(destinate) as finish, trip.*");
-		$query=$this->db->get_where('trip',$data);
+		$this->db->select("trip_view.*");
+		$query=$this->db->get_where('trip_view',$data);
 		return $query->result_array();
 	}
 	
 	function get(){
-		$this->db->select("city_name(start_city) AS start, city_name(destinate) as finish, trip.*");
-		$query=$this->db->get('trip');
+		$this->db->select("trip_view.*");
+		$query=$this->db->get('trip_view');
 		return $query->result_array();	
 	}
 

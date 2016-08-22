@@ -11,7 +11,7 @@
           <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="<?php echo base_url()?>">
-          <img src="<?php echo base_url()?>assets/img/logotype B.png" width="160px" height="22px">
+          <img src="<?php echo base_url()?>assets/img/logos.png" width="185px" height="25px">
           </a>
         </div>
 
@@ -69,8 +69,8 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">@<?php echo $_SESSION['user']['uname']?> <b class="caret"></b></a>
 
               <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
-                <li><a href="<?php echo base_url()?>userpage/profil">Your Profile</a></li>
-                <li><a href="trip.html">Your Trip</a></li>
+                <li><a href="<?php echo base_url()?>userpage/profil"> Profile</a></li>
+                <li><a href="trip.html">My Trip</a></li>
                 <li><a href="#">Change Password</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="<?php echo base_url()?>login/logout">Logout</a></li>

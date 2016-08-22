@@ -21,10 +21,28 @@
     
     <!-- JS -->
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/jquery.js"></script>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/bootstrap.js"></script>
 
     <script src="<?php echo base_url()?>assets/js/ie-emulation-modes-warning.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/js/typeahead.js"></script>
+	<script type="text/javascript">
+		// Waiting for the DOM ready...
+		$(function(){
+
+		  // applied typeahead to the text input box
+		  $('#my-input').typeahead({
+			name: 'countries',
+
+			// data source
+			prefetch: '<?php echo base_url()?>assets/countries.json',
+
+			// max item numbers list in the dropdown
+			limit: 10
+		  });
+
+		});
+	</script>
   </head>
-  <script type="text/javascript" src="<?php echo base_url()?>json/json.js"></script>

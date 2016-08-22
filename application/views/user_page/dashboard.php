@@ -20,7 +20,7 @@
 							</div>
 						</div>
 						<p><i class="fa fa-street-view" aria-hidden="true"></i> Address: Sulawesi 32A, Surabaya</p>
-						<p><i class="fa fa-calendar" aria-hidden="true"></i> Birthday: Surabaya, 25 Agustus 2014</p>
+						<p><i class="fa fa-calendar" aria-hidden="true"></i> Age: 23 Years</p>
 						<p><i class="fa fa-globe" aria-hidden="true"></i> Nationality: Indonesia</p>
 					  </div>
 					</div>
@@ -98,7 +98,7 @@
 			<div class="modal-content">
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Update Profile</h4>
+				<h4 class="modal-title" id="myModalLabel">Edit Profile</h4>
 			  </div>
 			  <div class="modal-body">
 				<form action="<?php echo base_url()?>login/signup" method="POST" class="form-horizontal">

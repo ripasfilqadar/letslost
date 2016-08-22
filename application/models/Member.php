@@ -7,10 +7,21 @@ class Member extends Base_model {
 	    parent::__construct();          
 	}
 	function getData(){
-		$this->db->select("cities.city_name, regions.reg_name, member.*");		
+		$this->db->select("member.uname, 
+					member.email, 
+					member.role, 
+					member.fullname,  
+					member.join_date, 
+					cities.city_name, 
+					regions.reg_name, 
+					member.phone, 
+					member.website, 
+					date_format(now(),'%Y')-date_format(member.born,'%Y')-(date_format(now(),'00-%m-%d')<date_format(member.born,'00-%m-%d')) AS age,
+					member.gender");		
 		$this->db->from('member');
 		$this->db->join('cities', 'member.city_id = cities.city_id');
 		$this->db->join('regions', 'cities.reg_id = regions.reg_id');
+		$this->db->where('flags',1);
 		$result=$this->db->get();
 		return $result->result_array();
 	}
@@ -25,12 +36,25 @@ class Member extends Base_model {
 			(
 				SELECT `partisipant`.`trip_id` 
 				FROM `partisipant` 
-				WHERE `partisipant`.`user_id` ='".$_SESSION['user']['user_id']."')";
+				WHERE `partisipant`.`user_id` ='".$_SESSION['user']['user_id']."')
+			AND flags = 1";
 		$result=$this->db->query($query);
 		return $result->result_array();
 	}
 	function getByHash($id){
-		$query="SELECT * FROM member WHERE md5(user_id)='".$id."'";
+		$query="SELECT `uname`,
+				`email`,
+				`role`,
+				`fullname`,
+				`join_date`,
+				`city_id`,
+				`phone`,
+				`website`,
+				date_format(now(),'%Y')-date_format(member.born,'%Y')-(date_format(now(),'00-%m-%d')<date_format(member.born,'00-%m-%d')) AS age,
+				`gender` 
+			FROM member 
+			WHERE md5(user_id)='".$id."' 
+				AND flags = 1";
 		$result=$this->db->query($query);
 		return $result->result_array();
 	}

@@ -7,9 +7,10 @@ class Partisipant extends Base_model {
 	    parent::__construct();          
 	}
 	function delete($data){
+		$data['flags']=0;
 		$this->db->where('trip_id',$data['trip_id']);
 		$this->db->where('user_id',$data['user_id']);
-		$this->db->delete($this->table);
+		$this->db->update($this->table,$data);
 	}
 
 }

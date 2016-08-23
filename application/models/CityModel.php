@@ -7,7 +7,7 @@ class cityModel extends Base_model {
 	    parent::__construct();          
 	}
 	function get(){
-		$this->db->join('regions','regions.region_id=cities.region');
+		$this->db->join('regions','regions.reg_id=cities.reg_id');
 		$result=$this->db->get('cities');
 		return $result->result_array();
 	}

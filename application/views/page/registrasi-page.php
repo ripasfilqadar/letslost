@@ -1,4 +1,5 @@
 <link href="<?php echo base_url()?>assets/css/form-elements.css" rel="stylesheet">
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <div class="container">
 			<div class="row">
                 <div class="col-sm-5">

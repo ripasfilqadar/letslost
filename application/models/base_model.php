@@ -24,7 +24,7 @@ class Base_model extends CI_Model {
 
 	function update($id,$data) {
 		$data['updated']=date('d-m-Y H:i:s'); //bisa kah rubah jadi now()[fungsi sql] ??
-		$data['updated_by']=.$_SESSION['user']['user_id'].;
+		$data['updated_by']=$_SESSION['user']['user_id'];
 		$this->db->where($id);
 	    $this->db->update($this->table,$data);
 	}

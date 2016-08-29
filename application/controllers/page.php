@@ -1,11 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+require_once APPPATH.'/third_party/php-graph-sdk-5.0.0/src/Facebook/Autoload.php';
 class Page extends MY_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('cityModel');
 		$this->load->model('tripmodel');
+		$this->load->library('facebook');
 	}
 	public function index()
 	{
@@ -26,5 +27,18 @@ class Page extends MY_Controller {
 			die();	
 		}
 		$this->layout->render('page/search',$data);
+	}
+	public function tes($value='')
+	{
+		$status=$this->facebook->is_authenticated();
+		echo $status;
+		echo $this->facebook->login_url();
+
+	}
+	function callbackLogin(){
+		$this->load->view('callback');
+	}
+	function loginFB(){
+		echo 'login';
 	}
 }

@@ -17,7 +17,7 @@ class UserPage extends CI_Controller {
 	function profil(){
 		$id['user_id']=$_SESSION['user']['user_id'];
 		$data['profil']=$this->member->getBy($id)[0];
-		$data['mytrips']=$this->tripModel->getBy(['organizer_id'=>$_SESSION['user']['user_id']]);
+		$data['mytrips']=$this->tripModel->getBy(['organizer'=>$_SESSION['user']['user_id']]);
 		$data['jointrips']=$this->member->getTrip();	
 		// var_dump($data['mytrips']);	
 

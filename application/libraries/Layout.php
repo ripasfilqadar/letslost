@@ -5,7 +5,7 @@ class Layout
 		$this->ci = &get_instance();
 	}
 	function render($url, $data=NULL) {
-		$this->ci->db->join('regions','regions.region_id=cities.region');
+		$this->ci->db->join('regions','regions.reg_id=cities.reg_id');
 		$result=$this->ci->db->get('cities');
 		$data['city']=$result->result_array();
 
@@ -14,7 +14,7 @@ class Layout
 		$this->ci->load->view('base/footer', $data);
 	}
 	function renderUser($url, $data=NULL){
-		$this->ci->db->join('regions','regions.region_id=cities.region');
+		$this->ci->db->join('regions','regions.reg_id=cities.reg_id');
 		$result=$this->ci->db->get('cities');
 		$data['city']=$result->result_array();
 

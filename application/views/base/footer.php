@@ -62,7 +62,7 @@ if (isset($_SESSION['warning'])) {
 
 
   $("[name='search']").keyup(function(){
-    alert('ll');
+    // alert('ll');
   });
 </script>
 

@@ -20,15 +20,12 @@ class TripModel extends Base_model {
 		$result=$this->db->query($query);
 		return $result->result_array();
 	}
-	function getBy($data){
-		$this->db->select("trip_view.*");
-		$this->db->where('flags',1);
+	function getBy($data){	
 		$query=$this->db->get_where('trip_view',$data);
 		return $query->result_array();
 	}
 	
 	function get(){
-		$this->db->select("trip_view.*");
 		$query=$this->db->get('trip_view');
 		return $query->result_array();	
 	}

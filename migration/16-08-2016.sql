@@ -51,7 +51,7 @@ CREATE TABLE `cities` (
   UNIQUE KEY `country` (`city_name`,`region`) USING BTREE,
   KEY `fk_cities_1_idx` (`region`),
   KEY `fk_cities_2_idx` (`country`),
-  CONSTRAINT `fk_cities_1` FOREIGN KEY (`region`) REFERENCES `regions` (`region_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_cities_1` FOREIGN KEY (`region`) REFERENCES `regions` (`reg_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_cities_2` FOREIGN KEY (`country`) REFERENCES `countries` (`country_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=508 DEFAULT CHARSET=utf8;
 
@@ -119,7 +119,7 @@ CREATE TABLE `member` (
   KEY `fk_user_1_idx` (`city_id`),
   KEY `fk_user_2_idx` (`region`),
   CONSTRAINT `fk_user_1` FOREIGN KEY (`city_id`) REFERENCES `cities` (`city_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_user_2` FOREIGN KEY (`region`) REFERENCES `regions` (`region_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_user_2` FOREIGN KEY (`region`) REFERENCES `regions` (`reg_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
 
 /*Data for the table `member` */
@@ -164,22 +164,22 @@ insert  into `partisipant`(parti_id,trip_id,user_id,fullname,city_id,phone,email
 DROP TABLE IF EXISTS `regions`;
 
 CREATE TABLE `regions` (
-  `region_id` int(11) NOT NULL AUTO_INCREMENT,
+  `reg_id` int(11) NOT NULL AUTO_INCREMENT,
   `country` int(11) DEFAULT NULL,
   `region_name` varchar(50) DEFAULT NULL,
   `latitude` varchar(100) DEFAULT NULL,
   `langitude` varchar(100) DEFAULT NULL,
   `zoom` varchar(100) DEFAULT NULL,
   `ads` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`region_id`),
-  UNIQUE KEY `id_UNIQUE` (`region_id`),
+  PRIMARY KEY (`reg_id`),
+  UNIQUE KEY `id_UNIQUE` (`reg_id`),
   UNIQUE KEY `countryCode_2` (`country`,`region_name`),
   CONSTRAINT `fk_regions_1` FOREIGN KEY (`country`) REFERENCES `countries` (`country_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
 /*Data for the table `regions` */
 
-insert  into `regions`(region_id,country,region_name,latitude,langitude,zoom,ads) values (1,1,'DKI Jakarta','-6.2297465','106.829518','11',NULL),(2,1,'Jawa Barat','-7.0792466','107.7353104','11',NULL),(3,1,'Banten','-6.5882168','105.9281141','10',NULL),(4,1,'Daerah Istimewa Yogyakarta','-7.8730414','110.4242874','10',NULL),(5,1,'Jawa Tengah','-7.3071521','110.123745','8',NULL),(6,1,'Jawa Timur','-7.6308544','113.5832404','8',NULL),(7,1,'Nanggroe Aceh Darussalam','4.0408634','96.648933','7',NULL),(8,1,'Sumatera Utara','1.8312921','98.7421852','7',NULL),(9,1,'Sumatera Barat','-1.556351','100.24492','7',NULL),(10,1,'Riau','0.8804467','101.919073','7',NULL),(11,1,'Kepulauan Riau','3.8723101','108.1604455','10',NULL),(12,1,'Jambi','-1.752903','102.793018','8',NULL),(13,1,'Bengkulu','-3.8954875','102.393025','8',NULL),(14,1,'Sumatera Selatan','-3.2753964','104.082144','8',NULL),(15,1,'Bangka Belitung','-2.4592931','106.978194','8',NULL),(16,1,'Lampung','-4.9461904','104.7446686','8',NULL),(17,1,'Kalimantan Barat','-0.51386','111.1108055','7',NULL),(18,1,'Kalimantan Selatan','-3.029925','115.45091','8',NULL),(19,1,'Kalimantan Tengah','-1.3843149','113.2904425','7',NULL),(20,1,'Kalimantan Timur','0.996888','116.4310645','7',NULL),(21,1,'Kalimantan Utara','2.7234529','116.2760395','8',NULL),(22,1,'Sulawesi Selatan','-4.8270885','119.4393624','7',NULL),(23,1,'Sulawesi Utara','2.5201579','124.4236516','7',NULL),(24,1,'Sulawesi Tengah','-1.1327955','121.81473','7',NULL),(25,1,'Sulawesi Tenggara','-3.850164','121.8852039','8',NULL),(26,1,'Sulawesi Barat','-2.2102175','119.3151655','8',NULL),(27,1,'Gorontalo','0.6737435','122.36169','9',NULL),(28,1,'Bali','-8.4554715','115.071577','10',NULL),(29,1,'Nusa Tenggara Barat','-8.5949886','117.953844','9',NULL),(30,1,'Nusa Tenggara Timur','-9.5355325','122.0576059','8',NULL),(31,1,'Maluku','-3.755207','128.9492764','8',NULL),(32,1,'Maluku Utara','0.6537945','128.1502326','8',NULL),(33,1,'Papua','-4.7545318','137.799296','6',NULL),(34,1,'Papua Barat','-1.624323','132.2790229','7',NULL);
+insert  into `regions`(reg_id,country,region_name,latitude,langitude,zoom,ads) values (1,1,'DKI Jakarta','-6.2297465','106.829518','11',NULL),(2,1,'Jawa Barat','-7.0792466','107.7353104','11',NULL),(3,1,'Banten','-6.5882168','105.9281141','10',NULL),(4,1,'Daerah Istimewa Yogyakarta','-7.8730414','110.4242874','10',NULL),(5,1,'Jawa Tengah','-7.3071521','110.123745','8',NULL),(6,1,'Jawa Timur','-7.6308544','113.5832404','8',NULL),(7,1,'Nanggroe Aceh Darussalam','4.0408634','96.648933','7',NULL),(8,1,'Sumatera Utara','1.8312921','98.7421852','7',NULL),(9,1,'Sumatera Barat','-1.556351','100.24492','7',NULL),(10,1,'Riau','0.8804467','101.919073','7',NULL),(11,1,'Kepulauan Riau','3.8723101','108.1604455','10',NULL),(12,1,'Jambi','-1.752903','102.793018','8',NULL),(13,1,'Bengkulu','-3.8954875','102.393025','8',NULL),(14,1,'Sumatera Selatan','-3.2753964','104.082144','8',NULL),(15,1,'Bangka Belitung','-2.4592931','106.978194','8',NULL),(16,1,'Lampung','-4.9461904','104.7446686','8',NULL),(17,1,'Kalimantan Barat','-0.51386','111.1108055','7',NULL),(18,1,'Kalimantan Selatan','-3.029925','115.45091','8',NULL),(19,1,'Kalimantan Tengah','-1.3843149','113.2904425','7',NULL),(20,1,'Kalimantan Timur','0.996888','116.4310645','7',NULL),(21,1,'Kalimantan Utara','2.7234529','116.2760395','8',NULL),(22,1,'Sulawesi Selatan','-4.8270885','119.4393624','7',NULL),(23,1,'Sulawesi Utara','2.5201579','124.4236516','7',NULL),(24,1,'Sulawesi Tengah','-1.1327955','121.81473','7',NULL),(25,1,'Sulawesi Tenggara','-3.850164','121.8852039','8',NULL),(26,1,'Sulawesi Barat','-2.2102175','119.3151655','8',NULL),(27,1,'Gorontalo','0.6737435','122.36169','9',NULL),(28,1,'Bali','-8.4554715','115.071577','10',NULL),(29,1,'Nusa Tenggara Barat','-8.5949886','117.953844','9',NULL),(30,1,'Nusa Tenggara Timur','-9.5355325','122.0576059','8',NULL),(31,1,'Maluku','-3.755207','128.9492764','8',NULL),(32,1,'Maluku Utara','0.6537945','128.1502326','8',NULL),(33,1,'Papua','-4.7545318','137.799296','6',NULL),(34,1,'Papua Barat','-1.624323','132.2790229','7',NULL);
 
 /*Table structure for table `report` */
 
@@ -273,7 +273,7 @@ DELIMITER $$
 /*!50003 CREATE DEFINER=`root`@`localhost` FUNCTION `region_name`(ID VARCHAR(100)) RETURNS varchar(100) CHARSET latin1
 BEGIN
 DECLARE NAMA VARCHAR(100);
-SELECT region_name INTO NAMA FROM regions WHERE region_id=ID;
+SELECT region_name INTO NAMA FROM regions WHERE reg_id=ID;
 RETURN NAMA;
     END */$$
 DELIMITER ;

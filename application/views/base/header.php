@@ -47,9 +47,15 @@
                       <input type="submit" value="Login" class="btn btn-lg btn-block btn-primary vertical-offset-10"/>
                     </div>
                     </form>
+                    
                   </div>
                   </div>
                 </li>
+                <li>
+                  <div>
+                    <a href="<?php echo base_url()?>login/loginFB" style="margin-left: 5px" class="btn ladda-button btn-success btn-md" size="md">Login With FB</a>
+                  </div>
+                </li>                
                 <li>
                   <div>
                     <span>No account yet?</span>

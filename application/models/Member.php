@@ -36,27 +36,24 @@ class Member extends Base_model {
 			(
 				SELECT `partisipant`.`trip_id` 
 				FROM `partisipant` 
-				WHERE `partisipant`.`user_id` ='".$_SESSION['user']['user_id']."')
-			AND flags = 1";
+				WHERE `partisipant`.`user_id` ='".$_SESSION['user']['user_id']."')";
 		$result=$this->db->query($query);
 		return $result->result_array();
 	}
 	function getByHash($id){
-		$query="SELECT `uname`,
-				`email`,
-				`role`,
-				`fullname`,
-				`join_date`,
-				`city_id`,
-				`phone`,
-				`website`,
-				date_format(now(),'%Y')-date_format(member.born,'%Y')-(date_format(now(),'00-%m-%d')<date_format(member.born,'00-%m-%d')) AS age,
-				`gender` 
+		$query="SELECT date_format(now(),'%Y')-date_format(member.born,'%Y')-(date_format(now(),'00-%m-%d')<date_format(member.born,'00-%m-%d')) AS age,
+			member.*
 			FROM member 
 			WHERE md5(user_id)='".$id."' 
 				AND flags = 1";
 		$result=$this->db->query($query);
 		return $result->result_array();
+	}
+	
+	function getMember($data){
+		$query="SELECT * FROM MEMBER WHERE uname='".$data['uname']."' or email='".$data['email']."'";
+		$result=$this->db->query($query);
+		return $result_array();
 	}
 
 }

@@ -28,16 +28,16 @@
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/bootstrap-datepicker.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/typeahead.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>json/destinate.js"></script>
 	<script type="text/javascript">
 		// Waiting for the DOM ready...
 		$(function(){
-
 		  // applied typeahead to the text input box
 		  $('#my-input').typeahead({
 			name: 'countries',
 
 			// data source
-			prefetch: '<?php echo base_url()?>assets/countries.json',
+			prefetch: "<?php echo base_url()?>json/destinate.js",
 
 			// max item numbers list in the dropdown
 			limit: 10

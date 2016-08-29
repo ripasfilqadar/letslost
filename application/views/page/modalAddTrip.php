@@ -37,7 +37,13 @@
             <div class="form-group">
               <label class="col-sm-2 control-label" >Nama Trip</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="Name" name="name">              
+                <input type="text" class="form-control" placeholder="Name" name="trip_name">              
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" >Destinasi</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Destinasi" name="destinate">              
               </div>
             </div>
            
@@ -46,7 +52,7 @@
               <div class="col-sm-10">
                 <select class="selectpicker form-control" data-live-search="true" name="start_city">
                 <?php foreach ($city as $row) { ?>
-                  <option value="<?php echo $row['city_id']?>"><?php echo $row['region_name']."-".$row['city_name']?></option>
+                  <option value="<?php echo $row['city_id']?>"><?php echo $row['reg_name']."-".$row['city_name']?></option>
                   
                 <?php }?>
                 </select>
@@ -56,9 +62,9 @@
             <div class="form-group">
               <label class="col-sm-2 control-label" >Kota Tujuan</label>
               <div class="col-sm-10">
-                 <select class="selectpicker form-control" data-live-search="true" name="destinate">
+                 <select class="selectpicker form-control" data-live-search="true" name="dest_city">
                 <?php foreach ($city as $row) { ?>
-                  <option value="<?php echo $row['city_id']?>"><?php echo $row['region_name']."-".$row['city_name']?></option>
+                  <option value="<?php echo $row['city_id']?>"><?php echo $row['reg_name']."-".$row['city_name']?></option>
                   
                 <?php }?>
                 </select>         
@@ -78,15 +84,7 @@
                 <input type="text" class="form-control datepicker" name="timeend">            
               </div>
             </div>
-
-
-            <div class="form-group">
-               <label class="col-sm-2 control-label" >Website</label>
-               <div class="col-sm-10">
-                <input type="text" class="form-control" name="website" placeholder="Website">            
-              </div>
-            </div>
-
+        
             <div class="form-group">
                <label class="col-sm-2 control-label" >Deadline</label>
                <div class="col-sm-10">

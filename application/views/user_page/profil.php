@@ -119,7 +119,7 @@
 					<div class="form-group">
 					  <label class="col-sm-2 control-label" >Email</label>
 					  <div class="col-sm-10">
-						<input type="email" class="form-control" placeholder="Mail" name="email" value="<?php echo $_SESSION['user']['phone']?>">              
+						<input type="email" class="form-control" placeholder="Mail" name="email" value="<?php echo $_SESSION['user']['email']?>">              
 					  </div>
 					</div>
 

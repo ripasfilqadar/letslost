@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+require_once APPPATH.'/third_party/php-graph-sdk-5.0.0/src/Facebook/Autoload.php';
 class Login extends CI_Controller {
 
 	function __construct(){
@@ -9,6 +9,7 @@ class Login extends CI_Controller {
 		$this->load->model('member');
 		$this->load->library('session');
 		$this->load->model('admin');
+		$this->load->library('facebook');
 		// $this->load->library('../controllers/EmailClass');
 	}
 
@@ -136,12 +137,18 @@ class Login extends CI_Controller {
 	}
 	function aktivasi($id){
 		$member=$this->member->getByHash($id)[0];
+		// print_r($member);
+		// die();
 		if (sizeof($member)==0) {
 			$_SESSION['warning']='Member tidak ditemukan';
 		}
 		else{			
 			$this->member->update($member['user_id'],['flags'=>1]);
-			$_SESSION['warning']='Aktivasi akun anda berhasil, silahkan login';
+
+			$_SESSION['user']=$member;
+			// print_r($_SESSION['user']);
+			// die();
+			redirect('/');
 		}
 		redirect('/');
 	}
@@ -169,5 +176,79 @@ class Login extends CI_Controller {
 
 	function registerpage(){
 		$this->layout->render('page/registrasi-page');
+	}
+	function loginFBPart2(){
+		$fb = $this->facebook->object();
+		// Get user info
+		$response = $fb->get('/me?fields=id,name,email,birthday,gender,first_name');
+		$user     = $response->getDecodedBody();			
+		$member=$this->member->getMember(['uname'=>'','email'=>$user['email']]);
+		if(sizeof($member)>0){
+			$tempMember=[];
+			foreach($member as $row){
+				if($user['id']==$row['fb_id']){
+					$_SESSION['user']=$row;
+					$_SESSION['warning']='Login Berhasil';
+					redirect('/');					
+				}
+			}
+			$_SESSION['warning']='Email sudah digunakan, silahkan login melalui email';
+			redirect('/');
+		}
+		else{
+			$data_insert=['uname'=>$user['first_name'],'email'=>$user['email'],'role'=>2,'fullname'=>$user['name'],'fb_id'=>$user['id']];
+			if(isset($user['gender'])){
+				if($user['gender']=='male') $data_insert['gender']=0;
+				else $data_insert['gender']=1;
+			}
+			if(isset($user['birthday'])) $data_insert['birthday']=$user['birthday'];
+			
+			$this->member->input($data_insert);
+			$data_insert['user_id']=$this->db->insert_id();
+			$_SESSION['user']=$data_insert;
+			redirect('/');			
+		}
+	}
+	function LoginFB(){
+	
+		$status=$this->facebook->is_authenticated();
+		
+		if(!$status){
+			$url=$this->facebook->login_url();
+			header("Location: ".$url);
+			exit;
+		}
+		else{
+			$fb = $this->facebook->object();
+			// Get user info
+			$response = $fb->get('/me?fields=id,name,email,birthday,gender,first_name');
+			$user     = $response->getDecodedBody();			
+			$member=$this->member->getBy(['fb_id'=>$user['id']]);
+			if(sizeof($member)>0){
+				$_SESSION['user']=$member[0];
+				$_SESSION['warning']='Login Berhasil';
+				redirect('/');
+			}
+			else{
+				$data_insert=['uname'=>$user['first_name'],'email'=>$user['email'],'role'=>2,'fullname'=>$user['name'],'fb_id'=>$user['id']];
+				die();
+				if(isset($user['gender'])){
+					if($user['gender']=='male') $data_insert['gender']=0;
+					else $data_insert['gender']=1;
+				}
+				if(isset($user['birthday'])) $data_insert['birthday']=$user['birthday'];
+				
+				$this->member->input($data_insert);
+				$data_insert['user_id']=$this->db->insert_id();
+				$_SESSION['user']=$data_insert;
+				redirect('/');			
+			}	
+		}
+
+	}
+	function update(){
+		$data=$this->input->post();
+		$this->member->update($_SESSION['user']['user_id'],$data);
+		redirect('userpage/profil') ;
 	}
 }

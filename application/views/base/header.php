@@ -24,38 +24,38 @@
             <li class="dropdown">
             
               <?php if (!isset($_SESSION['user'])) { ?>
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">Sign in <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;"><i class="fa fa-fw fa-sign-in"></i> Sign in <b class="caret"></b></a>
               <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
                 <li>
                   <div class="row">
-                  <div class="col-md-12">
-                    <form class="form" role="form" method="post" action="<?php echo base_url()?>login/checkLogin" accept-charset="UTF-8" id="login-nav">
-                    <div class="form-group">
-                      <label class="sr-only" for="email">Email</label>
-                      <input type="text" name="email" id="email" class="form-control" required="required" placeholder="Email"/>
-                    </div>
-                    <div class="form-group">
-                      <label class="sr-only" for="password">Password</label>
-                      <input type="password" name="pass" id="password" class="form-control" required="required" placeholder="Password"/>
-                    </div>
-                    <div class="checkbox">
-                      <label>
-                      <input type="checkbox"> Remember me
-                      </label>
-                    </div>
-                    <div class="form-group">
-                      <input type="submit" value="Login" class="btn btn-lg btn-block btn-primary vertical-offset-10"/>
-                    </div>
-                    </form>
-                    
-                  </div>
+					  <div class="col-md-12">
+						<form class="form" role="form" method="post" action="<?php echo base_url()?>login/checkLogin" accept-charset="UTF-8" id="login-nav">
+							<div class="form-group">
+							  <label class="sr-only" for="email">Email</label>
+							  <input type="text" name="email" id="email" class="form-control" required="required" placeholder="Email"/>
+							</div>
+							<div class="form-group">
+							  <label class="sr-only" for="password">Password</label>
+							  <input type="password" name="pass" id="password" class="form-control" required="required" placeholder="Password"/>
+							</div>
+							<div class="checkbox">
+							  <label>
+							  <input type="checkbox"> Remember me
+							  </label>
+							</div>
+							<div class="form-group">
+							  <input type="submit" value="Login" class="btn btn-lg btn-block btn-primary vertical-offset-10"/>
+							</div>
+						</form>
+					  </div>
                   </div>
                 </li>
                 <li>
                   <div>
-                    <a href="<?php echo base_url()?>login/loginFB" style="margin-left: 5px" class="btn ladda-button btn-success btn-md" size="md">Login With FB</a>
+                    <a href="<?php echo base_url()?>login/loginFB" style="margin-left: 5px" class="btn btn-block btn-social btn-facebook" size="md"><i class="fa fa-facebook"></i> Login With FB</a>
                   </div>
-                </li>                
+                </li>    
+				<li role="separator" class="divider"></li>
                 <li>
                   <div>
                     <span>No account yet?</span>

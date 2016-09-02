@@ -31,7 +31,7 @@
 		        	<div class="social-login">
 	                	<h3>...or login with:</h3>
 	                	<div class="social-login-buttons">
-		                	<a class="btn btn-link-1 btn-link-1-facebook" href="#">
+		                	<a class="btn btn-link-1 btn-link-1-facebook" href="<?php echo base_url()?>login/loginFB">
 		                		<i class="fa fa-facebook"></i> Facebook
 		                	</a>
 		                	<a class="btn btn-link-1 btn-link-1-twitter" href="#">

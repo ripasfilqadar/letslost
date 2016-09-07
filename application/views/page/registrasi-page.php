@@ -62,13 +62,14 @@
 	                    </div>
 			            <form role="form" action="<?php echo base_url()?>login/signup" method="post" class="registration-form">
 	                	    <div class="form-bottom">
+
 			                	<div class="form-group">
-			                		<label class="sr-only" for="form-first-name">First name</label>
-			                    	<input type="text" name="first_name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
+			                		<label class="sr-only" for="form-first-name">Username</label>
+			                    	<input type="text" name="uname" placeholder="Username" class="form-first-name form-control" id="form-first-name">
 			                    </div>
 			                    <div class="form-group">
-			                    	<label class="sr-only" for="form-last-name">Last name</label>
-			                    	<input type="text" name="last_name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
+			                    	<label class="sr-only" for="form-last-name">Fullname</label>
+			                    	<input type="text" name="fullname" placeholder="Name" class="form-last-name form-control" id="form-last-name">
 			                    </div>
 			                    <div class="form-group">
 			                    	<label class="sr-only" for="form-email">Email</label>

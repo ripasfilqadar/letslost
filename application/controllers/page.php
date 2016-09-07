@@ -20,12 +20,17 @@ class Page extends MY_Controller {
 			unset($input['type']);
 			$type='API';
 		}
+		if ($input['search']=='') {
+			$xml = json_decode(file_get_contents("http://ip-api.com/json"),true);
+			$input['search']=$xml['city'];
+		}
 		$data['trip']=$this->tripmodel->search($input);
 		if (isset($type)) {
 			$msg=['code'=>'200','msg'=>'Data Pencarian','data'=>$data['trip']];
 			echo json_encode($msg);
 			die();	
 		}
+		
 		$this->layout->render('page/search',$data);
 	}
 	public function tes($value='')

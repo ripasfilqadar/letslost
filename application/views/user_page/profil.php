@@ -1,5 +1,21 @@
 		<div class="container">
 			<div class="panel panel-default">
+			<?php
+			$empty=false;
+			foreach ($_SESSION['user'] as $key => $value) {
+				// echo $key;
+				if (is_null($value) && (strcmp($key,'updated')<0 && strcmp($key,'fb_id')<0 &&strcmp($key,'updated_by')<0)) {
+					$empty=true;
+					break;
+				}
+			}
+			if ($empty) {?>
+				<div class="alert alert-warning alert-dismissible" role="alert">
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <strong>Warning!</strong> Lengkapi data anda untuk kemudahan administrasi
+				</div>
+				
+			<?php } ?>
 				<div class="panel-body">
 					<a href="<?php echo base_url()?>"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> back to Search Page</a>
 				</div>
@@ -108,11 +124,32 @@
 						<input type="text" class="form-control" placeholder="Nama" name="fullname" value="<?php echo $_SESSION['user']['fullname']?>">              
 					  </div>
 					</div>
-					
 					<div class="form-group">
 					  <label class="col-sm-2 control-label" >Nomor HP</label>
 					  <div class="col-sm-10">
 						<input type="text" class="form-control" placeholder="Nomor HP" name="phone" value="<?php echo $_SESSION['user']['phone']?>">              
+					  </div>
+					</div>
+					<div class="form-group">
+				        <label class="col-sm-2 control-label" >Kota Asal</label>
+				        <div class="col-sm-10">
+				          <select class="selectpicker form-control" data-live-search="true" name="city_id">
+				          <?php foreach ($city as $row) {
+				          if ($_SESSION['user']['city_id']!=$row['city_id']) { ?>
+				           	<option value="<?php echo $row['city_id']?>"><?php echo $row['reg_name']."-".$row['city_name']?></option>
+				           <?php } else { ?>
+				           	<option selected value="<?php echo $row['city_id']?>"><?php echo $row['reg_name']."-".$row['city_name']?></option>
+				           <?php }
+							 }?>
+				          </select>
+				        </div>
+				      </div>
+
+					
+					<div class="form-group">
+					  <label class="col-sm-2 control-label" >Username</label>
+					  <div class="col-sm-10">
+						  <input type="text"  class="form-control" name="uname" value="<?php echo $_SESSION['user']['uname']?>">
 					  </div>
 					</div>
 					
@@ -122,18 +159,26 @@
 						<input type="email" class="form-control" placeholder="Mail" name="email" value="<?php echo $_SESSION['user']['email']?>">              
 					  </div>
 					</div>
-
 					<div class="form-group">
-					  <label class="col-sm-2 control-label" >Alamat</label>
+					  <label class="col-sm-2 control-label" >Website</label>
 					  <div class="col-sm-10">
-						  <textarea class="form-control" rows="5" placeholder="Alamat"></textarea>     
-					  </div>
+						<input type="text" class="form-control" name="website" value="<?php echo $_SESSION['user']['website']?>">
+					   </div>
 					</div>
-					
-					<!-- Jenis Kelamin DropDown -->
-					<!-- Tanggal Lahir Datetimepicker -->
-					<!-- Negara DropDown -->
-			  </div>
+					<div class="form-group">
+					  <label class="col-sm-2 control-label" >Born</label>
+					  <div class="col-sm-10">
+						<input type="text" class="form-control datepicker"  name="born" value="<?php echo date('d-m-Y',strtotime($_SESSION['user']['born']))?>">
+						</div>
+					</div>
+					<div class="form-group">
+					  <label class="col-sm-2 control-label" >Gender</label>
+					  <div class="col-sm-10">
+						<input type="radio"  name="gender" value="1"> L
+						<input type="radio"  name="gender" value="0"> P 
+						</div>
+					</div>
+    
 			  <div class="modal-footer">
 				  <button type="submit" class="btn btn-primary">Save</button>
 			  </div>

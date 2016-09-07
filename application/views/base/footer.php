@@ -60,11 +60,73 @@ if (isset($_SESSION['warning'])) {
       $(this).hide();
   });
 
+  //auto suggest
 
-  $("[name='search']").keyup(function(){
-    // alert('ll');
-  });
 </script>
+<script>
 
+
+
+var destinate = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('destinate'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  prefetch: "<?php echo base_url()?>json/destinate.json",
+});
+
+var cities = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('city_name'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  prefetch: "<?php echo base_url()?>json/city.json",
+});
+var regions = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('reg_name'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  prefetch: "<?php echo base_url()?>json/regions.json",
+});
+
+
+var country = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('country_name'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  prefetch: "<?php echo base_url()?>json/countries.json",
+});
+
+$('#my-input').typeahead({
+  highlight: true
+},
+{
+  name: 'Cities',
+  display: 'city_name',
+  source: cities,
+  templates: {
+    header: '<h3 class="league-name">Cities</h3>'
+  }
+},
+{
+  name: 'Destinasi',
+  display: 'destinate',
+  source: destinate,
+  templates: {
+    header: '<h3 class="league-name">Destinate</h3>'
+  }
+},
+{
+  name: 'Regions',
+  display: 'reg_name',
+  source: regions,
+  templates: {
+    header: '<h3 class="league-name">Region</h3>'
+  }
+},
+  {
+  name: 'country',
+  display: 'country_name',
+  source: country,
+  templates: {
+    header: '<h3 class="league-name">Country</h3>'
+  }
+});
+
+</script>
   </body>
 </html>

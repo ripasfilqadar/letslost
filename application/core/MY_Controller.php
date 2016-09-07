@@ -9,15 +9,13 @@ class MY_Controller extends CI_Controller {
 		}*/
 		$this->db->select('destinate');
 		$data = $this->db->get('trip_view')->result_array();
-		$destinate=[];
-		foreach ($data as $row) {
-			array_push($destinate, $row['destinate']);
-		}
-		$path=APPPATH."../json/destinate.js";
+		$path=APPPATH."../json/destinate.json";
 		$myfile = fopen($path, "w+") or die("Unable to open file!");
-		$destinate=json_encode($destinate);
+		$destinate=json_encode($data);
 		fwrite($myfile, $destinate);
 		fclose($myfile);
+		// print_r($destinate);
+		// die();
 		// echo json_encode($data);
 		// die();
 	}

@@ -10,8 +10,8 @@ class TripModel extends Base_model {
 		$query='SELECT * FROM trip_view 
 				WHERE destinate LIKE ("%'.$data["search"].'%")
 					OR dest_city LIKE ("%'.$data["search"].'%")
-        				OR dest_reg LIKE ("%'.$data["search"].'%") 
-        				OR dest_country LIKE ("%'.$data["search"].'%")
+        			OR dest_reg LIKE ("%'.$data["search"].'%") 
+        			OR dest_country LIKE ("%'.$data["search"].'%")
 					OR start_city LIKE ("%'.$data["search"].'%")
 					OR start_reg LIKE ("%'.$data["search"].'%")
 					OR start_country LIKE ("%'.$data["search"].'%")

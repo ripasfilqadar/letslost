@@ -29,21 +29,63 @@
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/bootstrap-datepicker.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/typeahead.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>json/destinate.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/js/typeahead.bundle.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/js/typeahead.jquery.js"></script>
+    
 	<script type="text/javascript">
 		// Waiting for the DOM ready...
-		$(function(){
+/*		$(function(){
 		  // applied typeahead to the text input box
 		  $('#my-input').typeahead({
-			name: 'countries',
+			name: 'destinate',
 
 			// data source
 			prefetch: "<?php echo base_url()?>json/destinate.js",
 
 			// max item numbers list in the dropdown
-			limit: 10
+			limit: 20
 		  });
 
-		});
+		});*/
+       /* $('.typeahead').typeahead({
+          minLength: 1,
+          highlight: true
+        },
+        {
+          name: 'my-dataset',
+          source: "<?php echo base_url()?>json/destinate.js",
+        });
+        $('.typeahead').typeahead('open');*/
+/*        $(function(){
+            var countries = new Bloodhound({
+            datumTokenizer: Bloodhound.tokenizers.whitespace,
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
+            // url points to a json file that contains an array of country names, see
+            // https://github.com/twitter/typeahead.js/blob/gh-pages/data/countries.json
+            prefetch: "<?php echo base_url()?>json/destinate.js",
+            });
+
+            // passing in `null` for the `options` arguments will result in the default
+            // options being used
+            $('#my-input').typeahead(null, {
+            name: 'countries',
+            source: countries
+            });
+        });*/
 	</script>
   </head>
+
+<!--  -->
+<style type="text/css">
+  #scrollable-dropdown-menu .tt-dropdown-menu {
+  max-height: 150px;
+  overflow-y: auto;
+}
+#multiple-datasets .league-name {
+  margin: 0 20px 5px 20px;
+  padding: 3px 0;
+  border-bottom: 1px solid #ccc;
+    max-height: 150px;
+  overflow-y: auto;
+}
+</style>

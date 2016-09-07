@@ -27,11 +27,11 @@
                   <tbody>
                     <?php foreach ($trip as $row) {?>
                       <tr class="listsearch">
-                      <td><?php echo $row['name']?>
-                      <br> <?php echo $row['desc']?><span style="display:none" class="datarow"><?php echo json_encode($row);?></span>
+                      <td><?php echo $row['trip_name']?>
+                      <br> <?php echo $row['descript']?><span style="display:none" class="datarow"><?php echo json_encode($row);?></span>
                       </td>
-                      <td><?php echo $row['start']?></td>
-                      <td><?php echo $row['finish']?></td>
+                      <td><?php echo $row['start_city']?></td>
+                      <td><?php echo $row['dest_city']?></td>
                       <td><?php echo date('d-m-Y',strtotime($row['timeheld']))?></td>
                       <td><?php echo date('d-m-Y',strtotime($row['timeend']))?></td>
                       <td><button data-select="detailTrip" data-id="<?php echo $row['trip_id']?>" style="margin-left: 5px" class="btn  btn-info" size="xs">View</button></td>

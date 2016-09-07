@@ -8,7 +8,7 @@
 				<br/>
 				<center>
 					<form action="<?php echo base_url()?>page/search">
-						<div id="custom-search-input">
+						<div id="custom-search-input" style="background:white">
 							<div class="input-group col-md-12">
 								<input class="form-control input-lg" title="Places, Cities, Regions, Countries, anyware." placeholder="Places, Cities, Regions, Countries, anyware." type="text" id="my-input" class="typeahead" name="search">
 								<span class="input-group-btn">

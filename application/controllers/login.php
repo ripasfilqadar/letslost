@@ -248,7 +248,11 @@ class Login extends CI_Controller {
 	}
 	function update(){
 		$data=$this->input->post();
+		$data['born']=date('Y-m-d',strtotime($data['born']));
+		print_r($data);
+		// die();
 		$this->member->update($_SESSION['user']['user_id'],$data);
+		// print_r($_SESSION['user']);
 		redirect('userpage/profil') ;
 	}
 }

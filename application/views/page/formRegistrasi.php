@@ -6,6 +6,17 @@
           <input type="text" class="form-control" placeholder="Name" name="fullname">              
         </div>
       </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label" >Kota Asal</label>
+        <div class="col-sm-10">
+          <select class="selectpicker form-control" data-live-search="true" name="city_id">
+          <?php foreach ($city as $row) { ?>
+            <option value="<?php echo $row['city_id']?>"><?php echo $row['reg_name']."-".$row['city_name']?></option>            
+          <?php }?>
+          </select>
+        </div>
+      </div>
+
 
       <div class="form-group">
         <label class="col-sm-2 control-label" >Username</label>
@@ -32,13 +43,6 @@
         <label class="col-sm-2 control-label" >Website</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" placeholder="Website" name="website">             
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-sm-2 control-label" >Bio</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" placeholder="Bio" name="bio">             
         </div>
       </div>
 

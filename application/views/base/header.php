@@ -69,17 +69,17 @@
           <?php } 
           elseif (isset($_SESSION['user'])) { ?>
             <ul class="nav navbar-nav navbar-right">
-            <li><a href="#modalAddTrip " data-toggle="modal" data-backdrop="static"  data-keyboard="false" style="color: white;">Post a Trip</a></li>
+            <li><a href="#modalAddTrip " data-toggle="modal" data-backdrop="static"  data-keyboard="false" style="color: white;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Post a Trip</a></li>
             <li class="dropdown">
             
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">@<?php echo $_SESSION['user']['uname']?> <b class="caret"></b></a>
 
               <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
-                <li><a href="<?php echo base_url()?>userpage/profil"> Profile</a></li>
-                <li><a href="trip.html">My Trip</a></li>
-                <li><a href="#">Change Password</a></li>
+                <li><a href="<?php echo base_url()?>userpage/profil"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+                <li><a href="trip.html"><i class="fa fa-map-marker" aria-hidden="true"></i> My Trip</a></li>
+                <li><a href="#"><i class="fa fa-lock" aria-hidden="true"></i> Change Password</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="<?php echo base_url()?>login/logout">Logout</a></li>
+                <li><a href="<?php echo base_url()?>login/logout"><i class="fa fa-power-off" aria-hidden="true"></i> Logout</a></li>
               </ul>
             </li>
             <li class="divider-vertical"></li>

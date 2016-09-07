@@ -14,7 +14,7 @@
     <link href="<?php echo base_url()?>assets/css/icon.css" rel="stylesheet">
     <link href="<?php echo base_url()?>assets/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/bootstrap-select.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/datepicker.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css">
     <link href="<?php echo base_url()?>assets/css/letslost.css" rel="stylesheet">
     <link href="<?php echo base_url()?>assets/css/bootstrap-social.css" rel="stylesheet">
     <link href="<?php echo base_url()?>assets/css/font-awesome.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -27,7 +27,7 @@
 
     <script src="<?php echo base_url()?>assets/js/ie-emulation-modes-warning.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/bootstrap-select.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>assets/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/typeahead.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/typeahead.bundle.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/typeahead.jquery.js"></script>

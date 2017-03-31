@@ -2,7 +2,8 @@
 SQLyog Enterprise - MySQL GUI v8.1 
 MySQL - 5.5.5-10.1.13-MariaDB : Database - triptroo_opentrip
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 

@@ -30,5 +30,11 @@ class TripModel extends Base_model {
 		return $query->result_array();	
 	}
 
+	function getTripBy($data)
+	{
+		$query=$this->db->get_where('trip',$data);
+		return $query->result_array();
+	}
+
 }
 ?>

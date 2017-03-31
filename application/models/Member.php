@@ -56,5 +56,12 @@ class Member extends Base_model {
 		return $result_array();
 	}
 
+	function getUserTrip($data)
+	{
+		$query = "SELECT * FROM trip, partisipant WHERE  partisipant.user_id = '".$data['user_id']."' and partisipant.trip_id = trip.trip_id";
+		$result = $this->db->query($query);
+		return $result->result_array();
+	}
+
 }
 ?>

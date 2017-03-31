@@ -184,4 +184,16 @@ class Trip extends CI_Controller {
 		$_SESSION['warning']='Trip Berhasil dihapus';
 		redirect('userpage/profil');
 	}
+
+	function trip_detail($id)
+	{
+		echo $id;
+		$input = $this->input->get();
+		$trip = $this->tripModel->getTripBy(['trip_id'=> $id]);
+			echo json_encode($trip);
+		die();
+		if (isset($input['type']) && $input["type"] == 'API') {
+		}
+
+	}
 }

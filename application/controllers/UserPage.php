@@ -56,4 +56,16 @@ class UserPage extends CI_Controller {
 		$data['partisipant']=$this->partisipant->getBy(['trip_id'=>$id]);
 		$this->layout->renderUser('user_page/manageTrip',$data);
 	}
+
+	function allTrip()
+	{
+		$user_id = $_SESSION['user']['user_id'];
+		$type = $this->input->get('type');
+		$all_trip = $this->member->getUserTrip(	['user_id'=> $user_id]);
+
+		if (isset($type) && $type == 'API') {
+			echo json_encode($all_trip);
+			die();
+		}
+	}
 }

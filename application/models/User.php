@@ -7,6 +7,6 @@ class User extends Base_model {
 	    parent::__construct();          
 	}
 	
-
+	
 }
 ?>
